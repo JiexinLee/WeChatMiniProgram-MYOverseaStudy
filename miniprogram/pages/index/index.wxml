@@ -1,0 +1,10 @@
+<!-- {{}} 作为数据绑定 -->
+<view> Hello {{name}}</view>
+<button size="mini" class="btn" open-type="getUserInfo"> click </button>
+<!-- wx:for for循环 -->
+<view wx:for="{{students}}">{{item.name}} -> {{item.age}}</view>
+
+<!-- 3.事件监听 -->
+<view> counter: {{counter}}</view>
+<button bindtap="btnHandler" class="bigBtn">add one</button>
+

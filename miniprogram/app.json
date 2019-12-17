@@ -1,0 +1,16 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/profile/profile",
+    "pages/about/about"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#1ca4a6",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "See Bros",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": true
+  },
+  "sitemapLocation": "sitemap.json"
+}

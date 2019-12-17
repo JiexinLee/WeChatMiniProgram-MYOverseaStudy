@@ -1,0 +1,7 @@
+.btn {
+  border: 1px solid black;
+}
+
+.bigBtn {
+  border: 1px solid lightcoral;
+}
