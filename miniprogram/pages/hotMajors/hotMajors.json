@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "uni-cell": "../../components/basicCell/basicCell"
+  }
+}

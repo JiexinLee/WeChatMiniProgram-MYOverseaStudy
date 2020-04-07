@@ -28,7 +28,6 @@
         wx:key = "index"
        >
         <navigator>
-          <!-- mode="aspectFit" -->
           <image src="{{item.image_src}}" mode="widthFix" lazy-load="true"></image> 
         </navigator>
        </swiper-item>
@@ -42,9 +41,9 @@
         wx:for = "{{cateList}}"
         wx:key = "index"
       >
-          <navigator>
+          <navigator url="{{item.url}}">
             <view class="index_cateColumn">
-              <image class="index_cateImgBox" src="{{item.image_src}}" lazy-load="true"></image>
+              <image class="index_cateImgBox" mode="aspectFit" src="{{item.image_icon}}" lazy-load="true"></image>
               <view class="index_cateTitle">{{item.name}}</view>
             </view>
           </navigator>
@@ -56,38 +55,20 @@
   <!-- Category List end -->
 
   <!-- Container -->
+  <!-- Hot Universities -->
   <view class="container">
-    <!-- Hot Universities -->
-    <view class="container_uni">
-      <view class="index_container_title">
-        <view class="container_title">
-          <text>热门学校</text>
-        </view>
-        <view class="container_subtitle">
-          <navigator>
-            <text>更多学校</text>
-          </navigator>
-        </view>
+    <view class="index_container_title">
+      <view class="container_title">
+        <text>热门学校</text>
       </view>
-      <view class="index_container_content">
-        <view class="container_uniIcon">
-          <image src="../../images/unis/UoM.png" lazy-load="true"></image>
-        </view>
-        <view class="container_uniDetail">
-          <view class="container_uniDetail_title">
-            <text>墨尔本大学</text>
-          </view>
-          <view class="container_uniDetail_block">
-            <text>The University of Melbourne</text>
-          </view>
-          <view class="container_uniDetail_block">学费: 40000～50000澳元/年</view>
-        </view>
-        <view class="container_uniRank">
-          <view class="container_uniRank_content">QS:38</view>
-        </view>
+      <view class="container_subtitle">
+        <navigator>
+          <text>更多学校</text>
+        </navigator>
       </view>
     </view>
-
+    <hot-university/>
+<!-- Hot Universities: end -->
   <!-- Hot Major-->
     <view class="container">
       <view class="index_container_title">
@@ -100,14 +81,21 @@
           </navigator>
         </view>
       </view>
-      <view class="index_container_content">
-        <view class="container_uniIcon">
-          <image src="../../images/unis/UoM.png" lazy-load="true"></image>
+      <view class="index_container_content_major">
+        <view class="container_content_major">
+          <text>圭尔夫大学应用科学硕士专业</text>
         </view>
-        <view class="container_uniDetail"></view>
-        <view class="container_uniRank"></view>
+        <view class="container_content_major_eng">
+          <text>Master of Applied Science (MACs)</text>
+        </view>
+        <view class="container_content_major_detail">
+          <view class="container_content_major_detail_year">学制: 2年</view>
+          <view class="container_content_major_detail_rank">专业排名: N/A</view>
+          <view class="container_content_major_detail_rank">学校排名: 570+</view>
+        </view>
       </view>
     </view>
+<!-- Hot major: end -->
 
     <!-- Study Strategy -->
     <view class="container">
@@ -121,28 +109,28 @@
           </navigator>
         </view>
       </view>
-      <view class="index_container_content">
-        <view class="container_uniIcon">
+      <view class="index_container_content_strategy">
+        <view class="container_strategyIcon">
           <image src="../../images/unis/UoM.png" lazy-load="true"></image>
         </view>
-        <view class="container_uniDetail"></view>
-        <view class="container_uniRank"></view>
+        <view class="container_strategyWrapper">
+          <view class="container_strategy_title">
+            <text>申请马来西亚南方大学学院的条件介绍</text>
+          </view>
+          <view class="container_strategy_date">
+            <view>阅读: 2256次</view>
+            <view>2019-08-30</view>
+          </view>
+        </view>
       </view>
     </view>
-
-    <!-- <wux-button size="default" block type="positive" bind:click="abcd">Light</wux-button> -->
-    <view class="blank"></view>
-    
   </view>
   <!-- Container end -->
 
-  <!-- Fixed Message -->
-  <view class="fixed_message" >
-    <view class="wrapper">
-      <button bindtap="abcd">微信群</button>
-      <button bindtap="abcd">在线咨询</button>
-      <button bindtap="abcd">招生简章</button>
-    </view>
-  </view>
-  <!-- end: Fixed Message -->
+  <!-- float Message --> 
+  <!-- 
+    功能改为浮动的 message窗口
+   -->
+  <!-- <float-button/> -->
+  <!-- end: float Message -->
 </page>

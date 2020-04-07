@@ -2,6 +2,7 @@
   "usingComponents": {
     "searchBar" : "../../components/searchBar/searchBar",
     "banner": "../../components/banner/banner",
-    "wux-button": "../../lib/button/index"
+    "float-button": "../../components/floatBtn/floatBtn",
+    "hot-university": "../../components/basicCell/basicCell"
   }
 }

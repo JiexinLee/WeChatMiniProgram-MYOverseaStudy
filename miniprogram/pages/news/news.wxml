@@ -1,0 +1,27 @@
+<page>
+  <!-- 搜索框 -->
+  <van-search 
+  value="{{ value }}" 
+  placeholder="请输入搜索关键词" 
+  shape="round"
+  clearable="true"
+  background="var(--themeColorBlue)"
+  />
+  <!-- 搜索框 end -->
+
+  <!-- 新闻卡 -->
+  <!-- price : 标题阅读量 -->
+  <!-- num : 右下角日期-->
+  <view class="news-card-wrapper"
+    wx:for="{{news_list}}"
+    wx:key="index"
+  >
+    <van-card  
+    price="{{item.click_num}}" 
+    num="{{item.date}}"
+    title="{{item.title}}"
+    thumb="{{item.image_src}}"
+    />
+  </view>
+  <!-- 新闻卡 end -->
+</page>

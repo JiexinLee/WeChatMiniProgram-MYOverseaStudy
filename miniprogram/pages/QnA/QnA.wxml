@@ -1,0 +1,54 @@
+<page>
+  <!-- 搜索栏 -->
+  <view>
+    <van-search 
+    value="{{ value }}" 
+    placeholder="请输入搜索关键词" 
+    shape="round"
+    clearable="true"
+    background="var(--themeColorBlue)"
+    />
+  </view>
+  <!-- 搜索栏 end -->
+
+  <!-- content -->
+  <view class="content">
+    <van-collapse value="{{ activeName }}" bind:change="onChange" >
+      <view class="wrapper">
+        <van-collapse-item title="请问悉尼大学雅思成绩要求多少？" name="1" class="blank" icon="../../../../images/testimg.jpeg">
+        留学科代表: 大学的雅思要求总分6.5分哦大学的雅思要求总分6.5分哦大学的雅思要求总分6.5分哦大学的雅思要求总分6.5分哦大学的雅思要求总分6.5分哦
+        </van-collapse-item>
+      </view>
+
+      <view class="wrapper">
+        <van-collapse-item title="请问阿德莱德大学雅思成绩要求多少？" name="2" icon="../../../../images/testimg.jpeg">
+        留学科代表: 大学的雅思要求总分6.5分哦
+        </van-collapse-item>
+      </view>
+      <view class="wrapper">
+        <van-collapse-item title="请问南澳大学雅思成绩要求多少？" name="3" icon="../../../../images/testimg.jpeg">
+          留学科代表: 南澳大学的雅思要求总分6.5分哦大学的雅思要求总分6.5分哦大学的雅思要求总分6.5分哦大学的雅思要求总分6.5分哦大学的雅思要求总分6.5分哦大学的雅思要求总分6.5分哦大学的雅思要求总分6.5分哦大学的雅思要求总分6.5分哦
+        </van-collapse-item>
+      </view>
+    </van-collapse>
+  </view>
+  <!-- end content -->
+  <!-- typing field -->
+  <view class="footer">
+    <van-cell-group>
+      <van-field
+        value="{{ sms }}"
+        center
+        clearable
+        left-icon="smile-o"
+        placeholder="请输入问题让我们给您解答"
+        border="{{ false }}"
+        use-button-slot
+      >
+        <van-button slot="button" size="small" type="primary">发送</van-button>
+      </van-field>
+    </van-cell-group>
+  </view>
+<!-- end typing field -->
+
+</page>

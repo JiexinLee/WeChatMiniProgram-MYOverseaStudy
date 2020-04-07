@@ -1,0 +1,25 @@
+<!-- Video Study page -->
+<!-- 页面功能： 返回，搜索栏，视频缩略图，标题，点击，上传时间 -->
+<!-- 视频调用腾讯视频链接，标题自己输入，缩略图后台上传。-->
+<!--点击以后调用默认视频播放功能。-->
+<page>
+ <!-- 搜索框 -->
+  <view>
+    <van-search
+      value="{{ searchValue }}"
+      placeholder="请搜索相关标题"
+      use-action-slot
+      shape="round"
+      bind:change="searchChange"
+      bind:search="searchClick"
+      bind:clear="searchClear"
+    >
+      <view slot="action" bind:tap="searchClick">搜索</view>
+    </van-search>
+  </view>
+
+  <!-- content -->
+  <view class="content">
+    <view></view>
+  </view>
+</page>

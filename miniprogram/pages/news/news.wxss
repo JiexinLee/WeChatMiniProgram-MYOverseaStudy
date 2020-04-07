@@ -1,0 +1,3 @@
+.news-card-wrapper {
+  margin-bottom: 15rpx;
+}

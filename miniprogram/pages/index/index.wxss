@@ -1,6 +1,3 @@
-page {
-  background-color: #f1f2f3;
-}
 
 .blank {
   height: 70rpx;
@@ -9,7 +6,7 @@ page {
 
 /* 轮播图 swiper */
 .index_swiper swiper{
-  height: 260rpx;
+  height: 440rpx;
 }
 
 .index_swiper swiper image {
@@ -59,7 +56,7 @@ page {
   background-color: #fff;
 }
 
-.index_container_content {
+.index_container_content_uni, .index_container_content_major, .index_container_content_strategy {
   background-color: #fff;
   width: 100%;
   height: 280rpx;
@@ -95,7 +92,7 @@ page {
   float: left;
 }
 
-.container_uniIcon image {
+.container_uniIcon image, .container_strategyIcon image {
   width: 250rpx;
   height: 250rpx;
 }
@@ -149,6 +146,72 @@ page {
   justify-content: center;
   align-items: center;
 }
+
+.index_container_content_major {
+  align-content: center;
+  padding-left: 28rpx;
+}
+.container_content_major, .container_content_major_eng, .container_content_major_detail {
+  width: 80%;
+  height: 33%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.container_content_major, .container_content_maijor_eng {
+  font-size: 30rpx;
+}
+
+.container_content_major_detail_year, .container_content_major_detail_rank {
+  margin-right: 28rpx;
+  font-size: 24rpx;
+  color: #db9d24;
+}
+
+.container_content_major_detail_year {
+  color: #767676;
+}
+
+.index_container_content_strategy {
+  padding: 0 30rpx;
+}
+
+
+.container_strategyIcon {
+  height: 280rpx;
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+}
+
+.container_strategy_date {
+  color: #767676;
+  font-size: 24rpx;
+}
+
+.container_strategyWrapper {
+  height: 280rpx;
+  width: 55%;
+  float: left;
+}
+
+.container_strategy_title, .container_strategy_date {
+  height: 50%;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container_strategy_date view {
+  margin-right: 35rpx;
+}
+
+
 /* 全局主题颜色的应用 */
 /* view {
   color: var(--themeColor);

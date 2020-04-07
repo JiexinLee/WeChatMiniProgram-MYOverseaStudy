@@ -1,0 +1,9 @@
+.wrapper {
+  margin-bottom: 15rpx;
+}
+
+.footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0
+}

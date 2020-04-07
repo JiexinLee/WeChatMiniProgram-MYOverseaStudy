@@ -17,7 +17,7 @@ Page({
       },
 
       {
-        image_src: "../../images/swiper/swiper2.png"
+        image_src: "../../images/swiper/swiper3.png"
       },
       {
         image_src: "https://ichef.bbci.co.uk/news/410/cpsprodpb/BF0D/production/_106090984_2e39b218-c369-452e-b5be-d2476f9d8728.jpg"
@@ -31,42 +31,56 @@ Page({
       {
         id: 1,
         name: "院校大全",
-        image_src: "../../images/categoryList/uni.png"
+        url: "/pages/hotUnis/hotUnis",
+        image_src: "../../images/categoryList/version1/uni.png",
+        image_icon: "../../images/categoryList/version2/xuexiao.png"
       },
       {
         id: 2,
         name: "热门专业",
-        image_src: "../../images/categoryList/major.png"
+        url: "/pages/hotMajors/hotMajors",
+        image_src: "../../images/categoryList/version1/major.png",
+        image_icon: "../../images/categoryList/version2/zhuanye.png"
       },
       {
         id: 3,
         name: "留学频道",
-        image_src: "../../images/categoryList/strategy.png"
+        url: "/pages/studyingChannel/studyingChannel",
+        image_src: "../../images/categoryList/version1/strategy.png",
+        image_icon: "../../images/categoryList/version2/pinggu.png"
       },
       {
         id: 4,
         name: "移民评估",
-        image_src: "../../images/categoryList/assessment.png"
+        url: "/pages/majors/majors",
+        image_src: "../../images/categoryList/version1/assessment.png",
+        image_icon: "../../images/categoryList/version2/gonglve.png"
       },
       {
         id: 5,
         name:"英语考试",
-        image_src: "../../images/categoryList/rank.png"
+        url: "/pages/engExam/engExam",
+        image_src: "../../images/categoryList/version1/rank.png",
+        image_icon: "../../images/categoryList/version2/jijing.png"
       },
       {
         id: 6,
         name: "新闻资讯",
-        image_src: "../../images/categoryList/immi.png"
+        url: "/pages/news/news",
+        image_src: "../../images/categoryList/version1/immi.png",
+        image_icon: "cloud://ljxxxlee-7vbgo.6c6a-ljxxxlee-7vbgo-1300914792/images/categoryList/version2/zixun.png"
       },
       {
         id: 7,
-        name: "互助论坛",
-        image_src: "../../images/categoryList/forum.png"
+        name: "留学Q&A",
+        url: "/pages/QnA/QnA",
+        image_src: "../../images/categoryList/version1/forum.png"
       },
       {
         id: 8,
-        name: "留学生活",
-        image_src: "../../images/categoryList/tiktok.png"
+        name: "视频留学",
+        url: "/pages/videoStudy/videoStudy",
+        image_src: "../../images/categoryList/version1/tiktok.png"
       }
     ],
 
@@ -92,7 +106,6 @@ Page({
     //   }
     // })
     this.getSwiperList();
-    this.getCateList();
 
   },
 
@@ -111,12 +124,6 @@ Page({
     //     ...
     //   })
     // })
-  },
-  abcd () {
-    console.log('....')
-  },
-  getCateList() {
-
   }
   
 })

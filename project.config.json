@@ -42,13 +42,58 @@
 		"game": {
 			"list": []
 		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
 		"miniprogram": {
-			"current": 0,
+			"current": -1,
 			"list": [
 				{
 					"id": -1,
 					"name": "db guide",
-					"pathName": "pages/databaseGuide/databaseGuide"
+					"pathName": "pages/databaseGuide/databaseGuide",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "热门专业",
+					"pathName": "pages/hotMajors/hotMajors",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "院校大全",
+					"pathName": "pages/hotUnis/hotUnis",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "新闻资讯",
+					"pathName": "pages/news/news",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "留学Q&A",
+					"pathName": "pages/QnA/QnA",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "留学频道",
+					"pathName": "pages/studyingChannel/studyingChannel",
+					"query": "",
+					"scene": null
 				}
 			]
 		}

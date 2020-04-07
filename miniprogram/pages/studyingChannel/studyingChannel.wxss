@@ -1,0 +1,64 @@
+.group-content view {
+  float: left;
+  /* width: 50%; */
+  height: 80rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.group-content-left {
+  white-space: nowrap;
+}
+
+.blank{
+  margin-top: 15rpx;
+}
+
+.group-content-left {
+  width: 55%;
+  padding-left: 30rpx;
+}
+
+.group-content-right {
+  width: 45%;
+}
+
+.group-content-right view{
+  width: 40%;
+  padding: 0 10rpx 0 10rpx;
+}
+
+.group-content {
+  font-size: 24rpx;
+  color: var(--searchBarFontColor);
+}
+
+.cell-color-liuxueChannel {
+  color: var(--themeColorBlue);
+}
+
+
+
+.example {
+  display: block;
+  width: 100%;
+  height: 70rpx;
+  background-color: #f2f2f2;
+  line-height: 70rpx;
+}
+
+.marquee_box {
+  width: 100%;
+  position: relative;
+}
+
+.marquee_text {
+  white-space: nowrap;
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+}
+
