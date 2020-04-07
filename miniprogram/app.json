@@ -1,16 +1,38 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/profile/profile",
-    "pages/about/about"
+    "components/searchBar/searchBar",
+    "pages/videoStudy/videoStudy",
+    "pages/hotMajors/hotMajors",
+    "pages/news/news",
+    "pages/QnA/QnA",
+    "pages/engExam/engExam",
+    "pages/hotUnis/hotUnis",
+    "pages/studyingChannel/studyingChannel"
   ],
+  "usingComponents": {
+    "van-button": "@vant/weapp/button",
+    "van-search": "@vant/weapp/search",
+    "van-icon": "@vant/weapp/icon",
+    "van-grid": "@vant/weapp/grid",
+    "van-grid-item": "@vant/weapp/grid-item",
+    "van-nav-bar": "@vant/weapp/nav-bar",
+    "van-popup": "@vant/weapp/popup",
+    "van-tree-select": "@vant/weapp/tree-select",
+    "van-card": "@vant/weapp/card",
+    "van-field": "@vant/weapp/field",
+    "van-collapse": "@vant/weapp/collapse",
+    "van-collapse-item": "@vant/weapp/collapse-item",
+    "van-cell": "@vant/weapp/cell",
+    "van-cell-group": "@vant/weapp/cell-group",
+    "van-notice-bar": "@vant/weapp/notice-bar"
+  },
   "window": {
-    "navigationBarBackgroundColor": "#1ca4a6",
+    "navigationBarBackgroundColor": "#33beb5",
     "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "See Bros",
+    "navigationBarTitleText": "麦芽科技",
     "backgroundColor": "#eeeeee",
-    "backgroundTextStyle": "dark",
-    "enablePullDownRefresh": true
+    "backgroundTextStyle": "dark"
   },
   "sitemapLocation": "sitemap.json"
 }

@@ -1,3 +1,7 @@
 {
-  
+  "usingComponents": {
+    "searchBar" : "../../components/searchBar/searchBar",
+    "banner": "../../components/banner/banner",
+    "wux-button": "../../lib/button/index"
+  }
 }

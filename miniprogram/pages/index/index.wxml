@@ -1,10 +1,148 @@
-<!-- {{}} 作为数据绑定 -->
-<view> Hello {{name}}</view>
-<button size="mini" class="btn" open-type="getUserInfo"> click </button>
-<!-- wx:for for循环 -->
-<view wx:for="{{students}}">{{item.name}} -> {{item.age}}</view>
+<page>
+  <!-- 搜索框 -->
+  <view class="index_searchBar">
+    <searchBar></searchBar>
+  </view>
+  
 
-<!-- 3.事件监听 -->
-<view> counter: {{counter}}</view>
-<button bindtap="btnHandler" class="bigBtn">add one</button>
+  <!-- 横幅 start 显示最近/最热搜索关键词 -->
+  <view class="index_banner">
+    <banner></banner>
+  </view>
+  <!-- 横幅 end -->
 
+  <!-- Swiper start -->
+  <view class="index_swiper">
+    <!-- swiper 标签默认宽度高度 -->
+    <!-- 100% * 150px -->
+
+    <!-- image 标签默认宽度高度 -->
+    <!-- 320px * 240px -->
+
+    <!-- image标签属性 mode渲染模式 -->
+    <!-- widthFix -->
+    <swiper autoplay="true" indicator-dots="true" circular="true">
+       <swiper-item
+        wx:for="{{swiperList}}"
+        wx:data-index = "index"
+        wx:key = "index"
+       >
+        <navigator>
+          <!-- mode="aspectFit" -->
+          <image src="{{item.image_src}}" mode="widthFix" lazy-load="true"></image> 
+        </navigator>
+       </swiper-item>
+    </swiper>
+  </view>
+  <!-- Swiper end -->
+
+  <!-- Category List -->
+  <view class="index_categoryBox">
+      <view class="index_cateList"
+        wx:for = "{{cateList}}"
+        wx:key = "index"
+      >
+          <navigator>
+            <view class="index_cateColumn">
+              <image class="index_cateImgBox" src="{{item.image_src}}" lazy-load="true"></image>
+              <view class="index_cateTitle">{{item.name}}</view>
+            </view>
+          </navigator>
+        <view>
+        </view>
+      </view>
+
+  </view>
+  <!-- Category List end -->
+
+  <!-- Container -->
+  <view class="container">
+    <!-- Hot Universities -->
+    <view class="container_uni">
+      <view class="index_container_title">
+        <view class="container_title">
+          <text>热门学校</text>
+        </view>
+        <view class="container_subtitle">
+          <navigator>
+            <text>更多学校</text>
+          </navigator>
+        </view>
+      </view>
+      <view class="index_container_content">
+        <view class="container_uniIcon">
+          <image src="../../images/unis/UoM.png" lazy-load="true"></image>
+        </view>
+        <view class="container_uniDetail">
+          <view class="container_uniDetail_title">
+            <text>墨尔本大学</text>
+          </view>
+          <view class="container_uniDetail_block">
+            <text>The University of Melbourne</text>
+          </view>
+          <view class="container_uniDetail_block">学费: 40000～50000澳元/年</view>
+        </view>
+        <view class="container_uniRank">
+          <view class="container_uniRank_content">QS:38</view>
+        </view>
+      </view>
+    </view>
+
+  <!-- Hot Major-->
+    <view class="container">
+      <view class="index_container_title">
+        <view class="container_title">
+          <text>热门专业</text>
+        </view>
+        <view class="container_subtitle">
+          <navigator>
+            <text>更多专业</text>
+          </navigator>
+        </view>
+      </view>
+      <view class="index_container_content">
+        <view class="container_uniIcon">
+          <image src="../../images/unis/UoM.png" lazy-load="true"></image>
+        </view>
+        <view class="container_uniDetail"></view>
+        <view class="container_uniRank"></view>
+      </view>
+    </view>
+
+    <!-- Study Strategy -->
+    <view class="container">
+      <view class="index_container_title">
+        <view class="container_title">
+          <text>留学攻略</text>
+        </view>
+        <view class="container_subtitle">
+          <navigator>
+            <text>更多攻略</text>
+          </navigator>
+        </view>
+      </view>
+      <view class="index_container_content">
+        <view class="container_uniIcon">
+          <image src="../../images/unis/UoM.png" lazy-load="true"></image>
+        </view>
+        <view class="container_uniDetail"></view>
+        <view class="container_uniRank"></view>
+      </view>
+    </view>
+
+    <!-- <wux-button size="default" block type="positive" bind:click="abcd">Light</wux-button> -->
+    <view class="blank"></view>
+    
+  </view>
+  <!-- Container end -->
+
+  <!-- Fixed Message -->
+  <view class="fixed_message" >
+    <view class="wrapper">
+      <button bindtap="abcd">微信群</button>
+      <button bindtap="abcd">在线咨询</button>
+      <button bindtap="abcd">招生简章</button>
+    </view>
+  </view>
+  <!-- end: Fixed Message -->
+</page>

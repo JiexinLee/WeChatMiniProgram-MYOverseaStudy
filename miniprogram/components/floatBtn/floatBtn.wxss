@@ -1,0 +1,18 @@
+
+.float-button {
+  position: fixed;
+  bottom: 20rpx;
+  right: 10rpx;  
+  display: flex;
+  justify-content: center;
+  border: 0 solid #ffffff;
+  border-radius: 50rpx;
+  box-shadow: 4rpx 1rpx 1rpx #cccccc;
+  background-color: aqua;
+}
+
+.float-button image {
+  height: 50rpx;
+  width: 50rpx;
+}
+

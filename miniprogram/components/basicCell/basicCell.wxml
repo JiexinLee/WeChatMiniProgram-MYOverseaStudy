@@ -1,0 +1,26 @@
+<view class="index_container_content_uni">
+  <view class="container_uniIcon">
+    <image src="../../images/unis/UoM.png" lazy-load="true"></image>
+  </view>
+  <view class="container_uniDetail">
+    <view class="container_uniDetail_title">
+      <text>墨尔本大学</text>
+      <view class="container_uniRank">
+        <view class="container_uniRank_content">QS:38</view>
+      </view>
+    </view>
+    <view class="container_uniDetail_block">
+      <text>The University of Melbourne</text>
+    </view>
+    <view class="container_uniDetail_block">
+      <text>学费: 40000-50000 澳币/年</text>
+    </view>
+    <view class="requirements"> 
+      <text>PTE/雅思: 本科 58/6.5, 硕士 58/6.5</text>
+    </view>
+    <view class="others">
+      <view class="location">Melbourne-VIC</view>
+      <view class="acceptance">录取率: 92.3%</view>
+    </view>
+  </view>
+</view>

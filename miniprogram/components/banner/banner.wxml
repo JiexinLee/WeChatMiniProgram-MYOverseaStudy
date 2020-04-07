@@ -1,0 +1,16 @@
+<view class="banner-body">
+  <view class="banner-content">
+    <view class="banner-wrapper"
+      wx:for="{{hotWordsList}}"
+      wx:key="index"
+    >
+      
+        <view class="hot-words">
+          <navigator>
+            <view class="hot-words-content">{{item.name}}</view>
+          </navigator>
+        </view>
+        
+    </view>
+  </view>
+</view>

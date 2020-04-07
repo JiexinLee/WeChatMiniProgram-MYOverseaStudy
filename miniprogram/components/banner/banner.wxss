@@ -1,0 +1,35 @@
+.banner-body {
+  height: 60rpx;
+  width: 100%;
+  background: linear-gradient(to right, var(--bannerColorLeft), var(--bannerColorRight));
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.banner-content {
+  height: 60rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hot-words {
+  height: 42rpx;
+  background: var(--bannerContentColor);
+  border-radius: 25rpx;
+  margin-right: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 30rpx; 
+  font-size: 24rpx;
+  color: var(--whiteColor);
+}
+
+.hot-words-content {
+  height: 50rpx;
+  line-height: 50rpx;
+  width: 100%;
+}

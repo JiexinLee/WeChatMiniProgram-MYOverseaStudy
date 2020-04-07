@@ -1,88 +1,122 @@
+//引入index.js 这个代码
+import { request } from "../../request/index.js";
+
 Page({
   
   /**
    * 页面的初始数据
    */
   data: {
-    name: "haha",
-    students: [
-      { id: 0, name: "lee", age: 18},
-      { id: 1, name: "wyatt", age: 11},
-      { id: 2, name: "sherry", age: 10},
-      { id: 3, name: "joe", age: 23}
+
+    /**
+     * 轮播图数据
+     */
+    swiperList:[
+      {
+        image_src: "../../images/swiper/swiper1.png"
+      },
+
+      {
+        image_src: "../../images/swiper/swiper2.png"
+      },
+      {
+        image_src: "https://ichef.bbci.co.uk/news/410/cpsprodpb/BF0D/production/_106090984_2e39b218-c369-452e-b5be-d2476f9d8728.jpg"
+      }
     ],
-    counter: 0
-    
-  },
-
-  // 添加函数
-  btnHandler() {
-    /**
-     * 1 错误示范： 没办法自动刷新数据
-     */
-    // this.data.counter += 1
 
     /**
-     * 2 用this.setData()
+     * 分类导航
      */
-    this.setData({
-      counter: this.data.counter + 1
-    })
+    cateList: [
+      {
+        id: 1,
+        name: "院校大全",
+        image_src: "../../images/categoryList/uni.png"
+      },
+      {
+        id: 2,
+        name: "热门专业",
+        image_src: "../../images/categoryList/major.png"
+      },
+      {
+        id: 3,
+        name: "留学频道",
+        image_src: "../../images/categoryList/strategy.png"
+      },
+      {
+        id: 4,
+        name: "移民评估",
+        image_src: "../../images/categoryList/assessment.png"
+      },
+      {
+        id: 5,
+        name:"英语考试",
+        image_src: "../../images/categoryList/rank.png"
+      },
+      {
+        id: 6,
+        name: "新闻资讯",
+        image_src: "../../images/categoryList/immi.png"
+      },
+      {
+        id: 7,
+        name: "互助论坛",
+        image_src: "../../images/categoryList/forum.png"
+      },
+      {
+        id: 8,
+        name: "留学生活",
+        image_src: "../../images/categoryList/tiktok.png"
+      }
+    ],
+
+    /**
+     * 热门学校数据
+     */
+    HotUniList: [
+      {
+        
+      }
+    ]
   },
- 
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    // 1. 获取轮播图数据 get the swiper data from APIs
+    // wx.request({
+    //   url: '',
+    //   success: (result) => {
+    //     this.setData
+    //   }
+    // })
+    this.getSwiperList();
+    this.getCateList();
+
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    
+  getSwiperList(){
+      /**
+       * 使用以下代码来获取apis数据!!
+       */
+    // request({url: ""})
+    // .then( result => {
+    //   this.setData({
+    //     swiperList: result.data
+    //   })
+    // })
+    // .then( result => {
+    //   this.setData({
+    //     ...
+    //   })
+    // })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    
+  abcd () {
+    console.log('....')
   },
+  getCateList() {
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-    
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-    
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-    
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-    
   }
+  
 })

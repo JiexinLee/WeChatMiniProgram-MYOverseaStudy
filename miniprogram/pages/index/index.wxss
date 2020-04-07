@@ -1,7 +1,182 @@
-.btn {
-  border: 1px solid black;
+page {
+  background-color: #f1f2f3;
 }
 
-.bigBtn {
-  border: 1px solid lightcoral;
+.blank {
+  height: 70rpx;
+  width: 100%;
+}
+
+/* 轮播图 swiper */
+.index_swiper swiper{
+  height: 260rpx;
+}
+
+.index_swiper swiper image {
+  width: 100%;
+  height: 260rpx;
+  
+}
+
+
+/* 分类导航 category */
+.index_categoryBox {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.index_cateList {
+  width: 150rpx;
+  text-align: center;
+  margin: 10rpx 0rpx 20rpx 30rpx;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.index_cateColumn {
+  width: 100%;
+  margin-top: 20rpx;
+  overflow: hidden;
+}
+
+.index_cateImgBox {
+  width:80rpx;
+  height:80rpx;
+}
+
+.index_cateTitle {
+  font-size: 24rpx;
+  text-align:center;
+  margin-top:10rpx;
+}
+
+/* container */
+.index_container_title {
+  height: 80rpx;
+  margin-bottom: 5rpx;
+  position: relative;
+  background-color: #fff;
+}
+
+.index_container_content {
+  background-color: #fff;
+  width: 100%;
+  height: 280rpx;
+  margin-bottom: 15rpx;
+}
+
+.container_title {
+  height: 80rpx;
+  padding-left: 25rpx;
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #20b4dc;
+  font-size: 35rpx;
+}
+
+.container_subtitle{
+  height: 80rpx;
+  float:right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 20rpx;
+}
+
+.container_uniIcon {
+  height: 280rpx;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+}
+
+.container_uniIcon image {
+  width: 250rpx;
+  height: 250rpx;
+}
+
+.container_uniDetail {
+  height: 280rpx;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+  flex-direction: column;
+}
+.container_uniDetail_title {
+  height: 25%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #20b4dc;
+  font-size: 35rpx;
+}
+
+.container_uniDetail_block {
+  width: 100%;
+  height: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #767676;
+  font-size: 26rpx;
+}
+
+.container_uniRank {
+  height: 280rpx;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+}
+
+.container_uniRank_content {
+  width: 60%;
+  height: 50rpx;
+  border: 1px solid #348ab9;
+  color: #348ab9;
+  border-radius: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* 全局主题颜色的应用 */
+/* view {
+  color: var(--themeColor);
+} */
+
+/* 固定横条 */
+.fixed_message {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  z-index: 1010;
+}
+
+.wrapper {
+  height: 70rpx;
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: row;
+}
+
+.wrapper button {
+  width: 33.2%;
+  background-color: #20b4dc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
 }

@@ -1,0 +1,51 @@
+<view class="search-input">
+<!-- 左侧： scan按钮 -->
+  <view class="searchBar-scan"> 
+    <navigator class="searchBar-navi">
+      <image class="searchBar-icon" style="display: block;" src="/images/searchBar/scan.png"></image>
+      <view>
+        <text style="text-align: center;">扫描</text>
+      </view>
+    </navigator>
+  </view>
+
+  <!-- 搜索框 -->
+  <view class="search-field">
+    <navigator  url="/pages/search/search" open-type="navigate">
+      <view class="search-field-content">
+        <image class="search-icon" src="/images/searchBar/search.png"></image> 
+        <view class="search-field-words">
+          <text decode="{{true}}" space="{{true}}"
+            wx:for = "{{hotSearchWordsList}}"
+            wx:key = "index"
+          > &nbsp;{{item.name}}</text>
+        </view>
+      </view>
+    </navigator>
+    
+    <view class="search-camera" bindtap="chooseFromAlbum">
+        <image src="/images/searchBar/camera.png"></image>
+    </view>
+  </view>
+
+  <!-- 右侧 location -->
+  <view class="search-location">
+    <navigator>
+      <image class="searchBar-icon" style="display: block;" src="/images/searchBar/location.png"></image>
+      <view style="text-align:center;">
+        <text>地区</text>
+      </view>
+    </navigator>
+  </view>
+
+  <!-- 右侧 message -->
+  <!-- <view class="search-message">
+    <navigator>
+      <image class="searchBar-icon" style="display: block;" src="/images/searchBar/message.png"></image>
+      <view  style="text-align: center;">
+        <text>消息</text>
+      </view>
+    </navigator>
+  </view> -->
+  <!-- End message -->
+</view>
