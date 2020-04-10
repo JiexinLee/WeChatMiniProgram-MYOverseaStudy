@@ -1,4 +1,6 @@
 var sortRule = false;
+const db = wx.cloud.database(); //连接数据库
+const major_list = db.collection("hotMajors");
 Page({
   /**
    * 页面的初始数据
@@ -116,7 +118,7 @@ Page({
         ]
       }
     ],
-
+    hotMajorsList:[],
     majorsList: [
       {
         uni_icon: "../../images/unis/UoM.png",
@@ -192,6 +194,19 @@ Page({
       }
     ]
   },
+  /**
+   * 小程序页面加载完成
+   */
+  onLoad: function(options){
+    major_list.get({
+      success: res => {
+        this.setData({
+          hotMajorsList: res.data
+        })
+      }
+    })
+    
+  },
 
   onClickNav({ detail = {} }) {
     this.setData({
@@ -246,7 +261,7 @@ Page({
     //property 根据什么排序
     var property = e.currentTarget.dataset.property;
     var self = this;
-    var majorsList = self.data.majorsList;
+    var majorsList = self.data.hotMajorsList;
     sortRule = !sortRule; // 正序倒序
     if(sortRule) { 
       wx.showToast({
@@ -262,7 +277,7 @@ Page({
       })
     }
     self.setData({
-      majorsList: majorsList.sort(self.compare(property, sortRule))
+      hotMajorsList: majorsList.sort(self.compare(property, sortRule))
     })
   },
 
@@ -278,9 +293,9 @@ Page({
         }
       } if(property == 'tuition') {
         if (bol) {
-          return value1[0] - value2[0];
+          return value1["min"] - value2["min"];
         } else {
-          return value2[0] - value1[0];
+          return value2["min"] - value1["min"];
         }
       } else {
         if (bol) {

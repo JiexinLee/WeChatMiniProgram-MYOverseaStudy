@@ -9,8 +9,9 @@
   bind:change="searchChange"
   bind:search="searchClick"
   bind:clear="searchClear"
+  background="var(--themeColorBlue)"
 >
-  <view slot="action" bind:tap="searchClick">搜索</view>
+  <view slot="action" bind:tap="searchClick" style="color: #fff;">搜索</view>
 </van-search>
   </view>
   <!-- 搜索栏 end -->

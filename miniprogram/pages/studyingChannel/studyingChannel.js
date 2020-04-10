@@ -1,6 +1,6 @@
 var dateParser = require("../../utils/dateParser.js");
-wx.cloud.init();
 const db = wx.cloud.database(); //连接数据库
+const uni_list = db.collection("studyChannel");
 Page({
   /**
    * 页面的初始数据
@@ -15,8 +15,10 @@ Page({
     searchValue: '',
     materials:  []
   },
+  /**
+   * 小程序页面加载完成
+   */
   onLoad: function (){
-    const uni_list = db.collection("studyChannel");
     uni_list.get({
       success: res => {
         var datas = res.data;
@@ -38,7 +40,6 @@ Page({
       searchValue: e.detail // e.detail 得到输入的值
     })
     if(e.detail == '') {
-      const uni_list = db.collection("studyChannel");
       uni_list.get({
         success: res => {
           var datas = res.data;
