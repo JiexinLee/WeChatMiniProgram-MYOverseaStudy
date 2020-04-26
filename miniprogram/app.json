@@ -25,7 +25,8 @@
     "van-collapse-item": "@vant/weapp/collapse-item",
     "van-cell": "@vant/weapp/cell",
     "van-cell-group": "@vant/weapp/cell-group",
-    "van-notice-bar": "@vant/weapp/notice-bar"
+    "van-notice-bar": "@vant/weapp/notice-bar",
+    "van-image": "@vant/weapp/image"
   },
   "window": {
     "navigationBarBackgroundColor": "#33beb5",

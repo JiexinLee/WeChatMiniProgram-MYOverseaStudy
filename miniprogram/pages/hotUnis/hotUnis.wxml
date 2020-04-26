@@ -1,13 +1,20 @@
 <page>
-<!-- 搜索框 -->
-  <van-search 
-  value="{{ value }}" 
-  placeholder="请输入搜索关键词" 
-  shape="round"
-  clearable="true"
-  background="var(--themeColorBlue)"
-  />
-  <!-- 搜索框 end -->
+  <!-- 搜索框 -->
+  <view>
+    <van-search
+      value="{{ searchValue }}"
+      placeholder="请搜索相关专业名称"
+      use-action-slot
+      shape="round"
+      bind:change="searchChange"
+      bind:search="searchClick"
+      bind:clear="searchClear"
+      background="var(--themeColorBlue)"
+    >
+      <view slot="action" bind:tap="searchClick" style="color: #fff;">搜索</view>
+    </van-search>
+  </view>
+    <!-- 搜索框 end -->
 
   <!-- 排序 -->
   <view class="filter"> 

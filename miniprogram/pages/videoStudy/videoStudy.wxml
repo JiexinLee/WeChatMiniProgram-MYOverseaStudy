@@ -3,23 +3,71 @@
 <!-- 视频调用腾讯视频链接，标题自己输入，缩略图后台上传。-->
 <!--点击以后调用默认视频播放功能。-->
 <page>
- <!-- 搜索框 -->
+  <!-- 搜索框 -->
   <view>
     <van-search
       value="{{ searchValue }}"
-      placeholder="请搜索相关标题"
+      placeholder="请搜索相关专业名称"
       use-action-slot
       shape="round"
       bind:change="searchChange"
       bind:search="searchClick"
       bind:clear="searchClear"
+      background="var(--themeColorBlue)"
     >
-      <view slot="action" bind:tap="searchClick">搜索</view>
+      <view slot="action" bind:tap="searchClick" style="color: #fff;">搜索</view>
     </van-search>
   </view>
+    <!-- 搜索框 end -->
 
   <!-- content -->
   <view class="content">
-    <view></view>
+    <view class="video_cell">
+      <video class="video"
+        id = "video_study_1"
+        src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"
+        show-center-play-btn = "true"
+        poster = "https://img.yzcdn.cn/vant/cat.jpeg"
+        title = "澳大利亚研究生快速申请"
+      />
+      <view class="video_text">
+        <view class="video_text_title">澳大利亚研究生快速申请</view>
+        <view class="video_text_subtitle">
+          <view class="video_text_subtitle_click">
+            <van-icon
+              name="fire-o"
+            />
+            123
+          </view>
+          <view class="video_text_subtitle_time">2019.10.22</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="video_cell">
+      <video class="video"
+        id = "video_study_2"
+        src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"
+        show-center-play-btn = "true"
+        poster = "https://img.yzcdn.cn/vant/cat.jpeg"
+        bindplay="videoPlay"
+        bindended="videoClose"
+        title = "澳大利亚研究生快速申请"
+      />
+
+      <view class="video_text">
+        <view class="video_text_title">澳大利亚研究生快速申请</view>
+        <view class="video_text_subtitle">
+          <view class="video_text_subtitle_click">
+            <van-icon
+              name="fire-o"
+            />
+            123
+          </view>
+          <view class="video_text_subtitle_time">2019.10.22</view>
+        </view>
+      </view>
+    </view>
+
   </view>
 </page>

@@ -1,1 +1,48 @@
-/* miniprogram/pages/videoStudy/videoStudy.wxss */
+
+.video_cell {
+  padding: 20rpx;
+  background-color: var(--backgroundGray);
+  width: 95%;
+  height: 390rpx;
+  border-radius: 15rpx;
+  margin: 10rpx auto;
+}
+
+.video_text {
+  clear: both;
+}
+
+.video_text_title, .video_text_subtitle {
+  float: left;
+  height: 50rpx;
+}
+
+.video_text_title {
+  font-size: 30rpx;
+  width: 65%;
+  display:flex;
+  justify-content:left; 
+  align-items:center;
+}
+
+.video_text_subtitle {
+  font-size: 20rpx;
+  color: var(--searchBarFontColor);
+  background-color: #fff;
+  width:35%;
+  border-radius: 10rpx;
+}
+
+.video_text_subtitle_time, .video_text_subtitle_click {
+  float: left;
+  height: 50rpx;
+  width: 50%;
+  display:flex;
+  justify-content:center; 
+  align-items:center;
+}
+
+.video {
+  height: 300rpx;
+  width: 100%;
+}

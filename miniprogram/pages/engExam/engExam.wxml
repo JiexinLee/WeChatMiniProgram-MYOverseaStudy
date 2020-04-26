@@ -1,2 +1,19 @@
-<!--miniprogram/pages/engExam/engExam.wxml-->
-<text>miniprogram/pages/engExam/engExam.wxml</text>
+<page>
+    <!-- 搜索框 -->
+  <view>
+    <van-search
+      value="{{ searchValue }}"
+      placeholder="请搜索相关专业名称"
+      use-action-slot
+      shape="round"
+      bind:change="searchChange"
+      bind:search="searchClick"
+      bind:clear="searchClear"
+      background="var(--themeColorBlue)"
+    >
+      <view slot="action" bind:tap="searchClick" style="color: #fff;">搜索</view>
+    </van-search>
+  </view>
+    <!-- 搜索框 end -->
+    
+</page>
