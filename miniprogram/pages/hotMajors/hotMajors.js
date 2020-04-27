@@ -10,6 +10,7 @@ Page({
     showMore: false, // 第二层弹出
     mainActiveIndex: 0,
     activeId: [],
+    searchValue: "",
     max: 100,
     items: [
       {
@@ -119,82 +120,72 @@ Page({
       }
     ],
     hotMajorsList:[],
-    majorsList: [
-      {
-        uni_icon: "../../images/unis/UoM.png",
-        major_name: "计算机科学",
-        uni_name_eng: "The University of Melbourne",
-        rank: 38,
-        tuition: [
-          40000, 50000
-        ],
-        length: 2,
-        requirements: [
-          58, 6.5
-        ],
-        acception: 92.3,
-        agency_icon: "",
-        counter:1,
-        migratable: true,
-        tag: "ANU"
-      },
-      {
-        uni_icon: "../../images/unis/UoM.png",
-        major_name: "海事工程",
-        uni_name_eng: "The University of Adelaide",
-        rank: 108,
-        tuition: [
-          30000, 48000
-        ],
-        length: 2,
-        requirements: [
-           58, 6.5
-        ],
-        acception: 91.5,
-        agency_icon: "",
-        counter: 12,
-        migratable: true,
-        tag: "ANU"
-      },
-      {
-        uni_icon: "../../images/unis/UoM.png",
-        major_name: "电子和电气工程",
-        uni_name_eng: "Australian National University",
-        rank: 30,
-        tuition: [
-          37000, 48000
-        ],
-        length: 2,
-        requirements: [
-          58, 6.5
-        ],
-        acception: 92.3,
-        agency_icon: "",
-        counter: 9,
-        migratable: false,
-        tag: "G8"
-      },
-      {
-        uni_icon: "../../images/unis/UoM.png",
-        major_name: "化学工程",
-        uni_name_eng: "The University of Sydney",
-        rank: 57,
-        tuition: [
-          42000, 48000
-        ],
-        length: 2,
-        requirements: [
-          58, 6.5
-        ],
-        acception: 98.1,
-        agency_icon: "",
-        counter: 10,
-        migratable: true,
-        tag: "IRU"
-      }
-    ]
   },
-  
+
+  /**
+   * 每次输入时改变value的值
+   */
+  searchChange: function (e) {
+    this.setData({
+      searchValue: e.detail // e.detail 得到输入的值
+    })
+    if (e.detail == '') {
+      major_list.get({
+        success: res => {
+          var datas = res.data;
+          this.setData({
+            hotMajorsList: datas
+          });
+        }
+      })
+    }
+  },
+
+  /**
+   * 点击清空按钮的时候响应
+   */
+  searchClear: function () {
+    major_list.get({
+      success: res => {
+        var datas = res.data;
+        this.setData({
+          hotMajorsList: datas
+        });
+        console.log(this.data.hotMajorsList)
+      }
+    })
+  },
+
+  /**
+   * 点击搜索的时候查找
+   */
+  searchClick: function (e) {
+    var that = this;
+    wx.showLoading({
+      title: '搜索中...',
+    })
+    major_list.where(db.command.or([
+      {
+        //使用正则查询，实现对搜索的模糊查询
+        major_name: db.RegExp({
+          regexp: '.*' + that.data.searchValue + '.*',
+          //从搜索栏中获取的value作为规则进行匹配。
+          options: 'i',
+          //大小写不区分
+        })
+      }
+    ])).get({
+      success: res => {
+        wx.hideLoading();
+        var datas = res.data;
+        that.setData({
+          hotMajorsList: datas
+        })
+        console.log(that.data.hotMajorsList)
+      }
+    })
+  },
+
   /**
    * 小程序页面加载完成
    */

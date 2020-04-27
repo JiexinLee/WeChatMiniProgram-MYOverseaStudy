@@ -1,4 +1,4 @@
-var dateParser = require("../../utils/dateParser.js");
+
 const db = wx.cloud.database(); //连接数据库
 const uni_list = db.collection("studyChannel");
 Page({
@@ -19,7 +19,7 @@ Page({
    * 小程序页面加载完成
    */
   onLoad: function (){
-    uni_list.get({
+    uni_list.get({ 
       success: res => {
         var datas = res.data;
         for(var i=0; i<datas.length; i++){
@@ -56,7 +56,7 @@ Page({
   },
   /**
    * 点击搜索的时候查找
-   */
+   */ 
   searchClick: function(e){
     var that = this;
     const uni_list = db.collection("studyChannel");

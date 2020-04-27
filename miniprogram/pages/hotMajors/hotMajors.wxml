@@ -5,7 +5,7 @@
     value="{{ searchValue }}"
     placeholder="请搜索相关专业名称"
     use-action-slot
-    shape="round"
+    shape="round" 
     bind:change="searchChange"
     bind:search="searchClick"
     bind:clear="searchClear"

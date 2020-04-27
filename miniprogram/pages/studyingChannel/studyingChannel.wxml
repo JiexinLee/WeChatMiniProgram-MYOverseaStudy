@@ -28,7 +28,7 @@
       >
         <view class="group-content-left" style="{{orientation}}:{{marqueeDistance}}px;">
           {{item.title}}
-        </view>
+        </view> 
         <view class="group-content-right">
           <van-icon name="notes-o"/>
           <view>{{item.click_number}}</view>

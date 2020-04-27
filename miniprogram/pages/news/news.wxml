@@ -20,7 +20,7 @@
   <!-- price : 标题阅读量 -->
   <!-- num : 右下角日期-->
   <view class="news-card-wrapper"
-    wx:for="{{news_list}}"
+    wx:for="{{news}}"
     wx:key="index"
   >
     <van-card  
