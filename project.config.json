@@ -23,7 +23,7 @@
 	},
 	"appid": "wxac0a69def3ee93d4",
 	"projectname": "miniprogram-1",
-	"libVersion": "2.10.1",
+	"libVersion": "2.10.4",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"condition": {
@@ -80,12 +80,14 @@
 					"id": -1,
 					"name": "新闻资讯",
 					"pathName": "pages/news/news",
+					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
 					"name": "留学Q&A",
 					"pathName": "pages/QnA/QnA",
+					"query": "",
 					"scene": null
 				},
 				{
@@ -93,6 +95,18 @@
 					"name": "留学频道",
 					"pathName": "pages/studyingChannel/studyingChannel",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "视频留学",
+					"pathName": "pages/videoStudy/videoStudy",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "英语考试",
+					"pathName": "pages/engExam/engExam",
 					"scene": null
 				}
 			]
