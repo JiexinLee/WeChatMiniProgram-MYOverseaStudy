@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    search_detail:'',
     show: false,
     mainActiveIndex: 0,
     activeId: [],
@@ -153,7 +154,8 @@ Page({
         agency_icon: "",
         counter: 1,
         migratable: true,
-        tag: "ANU"
+        tag: "ANU",
+        show: true
       },
       {
         uni_icon: "../../images/unis/UoM.png",
@@ -171,7 +173,8 @@ Page({
         agency_icon: "",
         counter: 12,
         migratable: true,
-        tag: "ANU"
+        tag: "ANU",
+        show: true
       },
       {
         uni_icon: "../../images/unis/UoM.png",
@@ -189,7 +192,8 @@ Page({
         agency_icon: "",
         counter: 9,
         migratable: false,
-        tag: "G8"
+        tag: "G8",
+        show: true
       },
       {
         uni_icon: "../../images/unis/UoM.png",
@@ -207,10 +211,90 @@ Page({
         agency_icon: "",
         counter: 10,
         migratable: true,
-        tag: "IRU"
+        tag: "IRU",
+        show: true
       }
-    ]
+    ],
+    showed_universities: [
+      {
+        uni_icon: "../../images/unis/UoM.png",
+        uni_name: "墨尔本大学",
+        uni_name_eng: "The University of Melbourne",
+        rank: 38,
+        tuition: [
+          40000, 50000
+        ],
+        location: "Melbourne",
+        requirements: [
+          58, 6.5
+        ],
+        acception: 92.3,
+        agency_icon: "",
+        counter: 1,
+        migratable: true,
+        tag: "ANU",
+        is_show: true
+      },
+      {
+        uni_icon: "../../images/unis/UoM.png",
+        uni_name: "阿德莱德大学",
+        uni_name_eng: "The University of Adelaide",
+        rank: 108,
+        tuition: [
+          30000, 48000
+        ],
+        location: "Adelaide",
+        requirements: [
+          58, 6.5
+        ],
+        acception: 91.5,
+        agency_icon: "",
+        counter: 12,
+        migratable: true,
+        tag: "ANU",
+        is_show: true
+      },
+      {
+        uni_icon: "../../images/unis/UoM.png",
+        uni_name: "澳洲国立大学",
+        uni_name_eng: "Australian National University",
+        rank: 30,
+        tuition: [
+          37000, 48000
+        ],
+        location: "Canberra",
+        requirements: [
+          58, 6.5
+        ],
+        acception: 92.3,
+        agency_icon: "",
+        counter: 9,
+        migratable: false,
+        tag: "G8",
+        is_show: true
+      },
+      {
+        uni_icon: "../../images/unis/UoM.png",
+        uni_name: "悉尼大学",
+        uni_name_eng: "The University of Sydney",
+        rank: 57,
+        tuition: [
+          42000, 48000
+        ],
+        location: "Sydney",
+        requirements: [
+          58, 6.5
+        ],
+        acception: 98.1,
+        agency_icon: "",
+        counter: 10,
+        migratable: true,
+        tag: "IRU",
+        is_show: true
+      }
+    ],
   },
+
 
   onClickNav({ detail = {} }) {
     this.setData({
@@ -258,12 +342,44 @@ Page({
     })
   },
 
+  // 点击 搜索
+  searchChange:function(e){
+    this.data.search_detail = e.detail;
+  },
+
+  searchClick:function(e){
+    this.setData({
+      showed_universities:[]
+    })
+    var search_key = this.data.search_detail;
+    var result_unis = [];
+
+    for(var i=0; i < this.data.universitiesList.length; i++){
+
+      
+      var chinese_name = this.data.universitiesList[i].uni_name;
+      var tag = this.data.universitiesList[i].tag;
+      var location = this.data.universitiesList[i].location;
+
+      if ( !( (chinese_name.indexOf(search_key)) ||
+            (tag == search_key) ||
+            (location == search_key)))  {
+              result_unis.push(this.data.universitiesList[i]);
+              console.log(result_unis);
+            }
+    }
+    //console.log(this.data.showed_universities);
+    this.setData({
+      showed_universities:result_unis
+    })
+  },
+
   // 点击 排序功能
   mySort: function (e) {
     //property 根据什么排序
     var property = e.currentTarget.dataset.property;
     var self = this;
-    var universitiesList = self.data.universitiesList;
+    var universitiesList = self.data.showed_universities;
     sortRule = !sortRule; // 正序倒序
     if (sortRule) {
       wx.showToast({
@@ -279,7 +395,7 @@ Page({
       })
     }
     self.setData({
-      universitiesList: universitiesList.sort(self.compare(property, sortRule))
+      showed_universities: universitiesList.sort(self.compare(property, sortRule))
     })
   },
 

@@ -11,7 +11,7 @@
       bind:clear="searchClear"
       background="var(--themeColorBlue)"
     >
-      <view slot="action" bind:tap="searchClick" style="color: #fff;">搜索</view>
+      <view slot="action" bindtouchstart="searchClick" style="color: #fff;">搜索</view>
     </van-search>
   </view>
     <!-- 搜索框 end -->
@@ -29,7 +29,7 @@
 
   <view class="container">
     <view class="index_container_content_uni" 
-      wx:for="{{universitiesList}}"
+      wx:for="{{showed_universities}}"
       wx:key="index"
     >
       <view class="container_uniIcon">
@@ -54,6 +54,12 @@
       <view class="others">
         <view class="location"><van-icon name="location" size="20rpx"/><text>{{item.location}}</text></view>
         <view class="acceptance">录取率: {{item.acception}}%</view>
+      </view>
+    </view>
+    <view class="index_container_content_uni"
+      wx:if="{{showed_universities==null}}" >
+      <view class="container_uniDetail_title">
+          <text>亲，您的结果，我找不到，要不换个词试试吧</text>
       </view>
     </view>
 </view>
