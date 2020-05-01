@@ -41,14 +41,17 @@
     <view class="group-title">
       <van-cell title="留学方案" value="更多" size="large" />
     </view>
-    <view class="group-content">
+    <view class="group-content"
+      wx:for = "{{strategies}}"
+      wx:key = 'index'
+    >
       <view class="group-content-left">
-        哈哈哈哈阿生大师大师大
+        {{item.title}}
       </view>
       <view class="group-content-right">
         <van-icon name="notes-o"/>
-        <view>12113111</view>
-        <view>2018.03.12</view>
+        <view>{{item.click_number}}</view>
+        <view>{{item.date}}</view>
       </view>
     </view>
     
@@ -58,26 +61,18 @@
       <van-cell title="留学活动" value="更多" size="large" />
     </view>
     
-    <view class="group-content">
+    <view class="group-content"
+      wx:for = "{{activities}}"
+      wx:key = 'index'
+    >
       <view class="group-content-left">
-        哈哈哈哈阿生大师大师大
+        {{item.title}}
       </view>
       <view class="group-content-right">
         <van-icon name="notes-o"/>
-        <view>12113111</view>
-        <view>2018.03.12</view>
+        <view>{{item.click_number}}</view>
+        <view>{{item.date}}</view>
       </view>
     </view>
   <!-- content end -->
-
-
-  <!-- <view class="example">
-      <view class="marquee_box">
-        <view class="marquee_text" style="{{orientation}}:{{marqueeDistance}}px;font-size: {{size}}px;">
-          <image src="{{adUrl}}" class='ad-image' />{{text}}
-        </view>
-      </view>
-    </view> -->
-
-
 </page>

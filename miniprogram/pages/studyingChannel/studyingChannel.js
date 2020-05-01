@@ -1,25 +1,23 @@
 
 const db = wx.cloud.database(); //连接数据库
-const uni_list = db.collection("studyChannel");
+const materials_list = db.collection("studyChannel_materials");
+const activities_list = db.collection("studyChannel_activities");
+const strategies_list = db.collection("studyChannel_strategies");
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-    // text: '这是一个哈哈哈',
-    // marqueePace: 1,//滚动速度
-    // marqueeDistance: 1,//初始滚动距离
-    // size: 14,
-    // orientation: 'left',//滚动方向
-    // interval: 50 // 时间间隔
     searchValue: '',
-    materials:  []
+    materials:  [],
+    strategies: [],
+    activities: []
   },
   /**
    * 小程序页面加载完成
    */
   onLoad: function (){
-    uni_list.get({ 
+    materials_list.get({ 
       success: res => {
         var datas = res.data;
         for(var i=0; i<datas.length; i++){
@@ -31,7 +29,34 @@ Page({
         console.log(this.data.materials)
       }
     })
+
+    activities_list.get({
+      success: res => {
+        var datas = res.data;
+        for (var i = 0; i < datas.length; i++) {
+          datas[i].date = this.date_parser('' + this.dateToMs(datas[i].date)) // 转换日期
+        }
+        this.setData({
+          activities: datas
+        });
+        console.log(this.data.materials)
+      }
+    })
+
+    strategies_list.get({
+      success: res => {
+        var datas = res.data;
+        for (var i = 0; i < datas.length; i++) {
+          datas[i].date = this.date_parser('' + this.dateToMs(datas[i].date)) // 转换日期
+        }
+        this.setData({
+          strategies: datas
+        });
+        console.log(this.data.materials)
+      }
+    })
   },
+  
   /**
    * 每次输入时改变value的值
    */
@@ -40,7 +65,7 @@ Page({
       searchValue: e.detail // e.detail 得到输入的值
     })
     if(e.detail == '') {
-      uni_list.get({
+      materials_list.get({
         success: res => {
           var datas = res.data;
           for (var i = 0; i < datas.length; i++) {
@@ -52,6 +77,30 @@ Page({
           console.log(this.data.materials)
         }
       })
+      strategies_list.get({
+        success: res => {
+          var datas = res.data;
+          for (var i = 0; i < datas.length; i++) {
+            datas[i].date = this.date_parser('' + this.dateToMs(datas[i].date)) // 转换日期
+          }
+          this.setData({
+            strategies: datas
+          });
+          console.log(this.data.materials)
+        }
+      })
+      activities_list.get({
+        success: res => {
+          var datas = res.data;
+          for (var i = 0; i < datas.length; i++) {
+            datas[i].date = this.date_parser('' + this.dateToMs(datas[i].date)) // 转换日期
+          }
+          this.setData({
+            activities: datas
+          });
+          console.log(this.data.materials)
+        }
+      })
     }
   },
   /**
@@ -59,11 +108,10 @@ Page({
    */ 
   searchClick: function(e){
     var that = this;
-    const uni_list = db.collection("studyChannel");
     wx.showLoading({
       title: '搜索中...',
     })
-    uni_list.where(db.command.or([
+    materials_list.where(db.command.or([
       {
         //使用正则查询，实现对搜索的模糊查询
         title: db.RegExp({
@@ -86,60 +134,60 @@ Page({
         console.log(that.data.materials)
       }
     })
-  },
-  /**
-   * 点击清空按钮的时候响应
-   */
-  searchClear: function(){
-    const uni_list = db.collection("studyChannel");
-    uni_list.get({
+
+    activities_list.where(db.command.or([
+      {
+        //使用正则查询，实现对搜索的模糊查询
+        title: db.RegExp({
+          regexp: '.*' + that.data.searchValue + '.*',
+          //从搜索栏中获取的value作为规则进行匹配。
+          options: 'i',
+          //大小写不区分
+        })
+      }
+    ])).get({
       success: res => {
+        wx.hideLoading();
         var datas = res.data;
         for (var i = 0; i < datas.length; i++) {
           datas[i].date = this.date_parser('' + this.dateToMs(datas[i].date)) // 转换日期
         }
-        this.setData({
-          materials: datas
-        });
-        console.log(this.data.materials)
+        that.setData({
+          activities: datas
+        })
+        console.log(that.data.materials)
+      }
+    })
+
+    strategies_list.where(db.command.or([
+      {
+        //使用正则查询，实现对搜索的模糊查询
+        title: db.RegExp({
+          regexp: '.*' + that.data.searchValue + '.*',
+          //从搜索栏中获取的value作为规则进行匹配。
+          options: 'i',
+          //大小写不区分
+        })
+      }
+    ])).get({
+      success: res => {
+        wx.hideLoading();
+        var datas = res.data;
+        for (var i = 0; i < datas.length; i++) {
+          datas[i].date = this.date_parser('' + this.dateToMs(datas[i].date)) // 转换日期
+        }
+        that.setData({
+          strategies: datas
+        })
+        console.log(that.data.materials)
       }
     })
   },
+
   onShow: function () {
-    // var that = this;
-    // var windowWidth = (wx.getSystemInfoSync().windowWidth)*0.6;   // 跑马灯 屏幕宽度
 
-  //   // 页面显示
-  //   var that = this;
-  //   var length = that.data.text.length * that.data.size;//文字长度
-  //   var windowWidth = wx.getSystemInfoSync().windowWidth;// 屏幕宽度
-  //   that.setData({
-  //     length: length,
-  //     windowWidth: windowWidth,
-  //   });
-  //   that.runMarquee();// 水平一行字滚动完了再按照原来的方向滚动
-  // },
-
-  // runMarquee: function () {
-  //   console.log(2);
-  //   var that = this;
-  //   var interval = setInterval(function () {
-  //     //文字一直移动到末端
-  //     if (-that.data.marqueeDistance < that.data.length) {
-  //       console.log(3);
-  //       that.setData({
-  //         marqueeDistance: that.data.marqueeDistance - that.data.marqueePace,
-  //       });
-  //     } else {
-  //       console.log(4);
-  //       clearInterval(interval);
-  //       that.setData({
-  //         marqueeDistance: that.data.windowWidth
-  //       });
-  //       that.runMarquee();
-  //     }
-  //   }, that.data.interval);
   },
+
   /**
    * 转换时间
    */
@@ -158,4 +206,7 @@ Page({
     let result = new Date(date).getTime();
     return result;
   }
+
+
+  
 })

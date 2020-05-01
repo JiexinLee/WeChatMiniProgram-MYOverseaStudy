@@ -26,7 +26,8 @@
     "van-cell": "@vant/weapp/cell",
     "van-cell-group": "@vant/weapp/cell-group",
     "van-notice-bar": "@vant/weapp/notice-bar",
-    "van-image": "@vant/weapp/image"
+    "van-image": "@vant/weapp/image",
+    "van-loading": "@vant/weapp/loading"
   },
   "window": {
     "navigationBarBackgroundColor": "#33beb5",
