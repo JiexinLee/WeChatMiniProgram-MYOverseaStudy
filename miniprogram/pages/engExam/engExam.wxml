@@ -1,19 +1,13 @@
 <page>
-    <!-- 搜索框 -->
-  <view>
-    <van-search
-      value="{{ searchValue }}"
-      placeholder="请搜索相关专业名称"
-      use-action-slot
-      shape="round"
-      bind:change="searchChange"
-      bind:search="searchClick"
-      bind:clear="searchClear"
-      background="var(--themeColorBlue)"
-    >
-      <view slot="action" bind:tap="searchClick" style="color: #fff;">搜索</view>
-    </van-search>
+  <view class="loading-icon" style="display: {{showLoadingIcon}}">
+    <van-loading  size="80rpx" vertical> 
+      <text style="font-size: 30rpx; ">图片加载中... </text>
+    </van-loading>
   </view>
-    <!-- 搜索框 end -->
-    
+  <view class="poster-wrapper" style="display: {{showImg}};">
+      <image src="{{posterSrc}}" 
+      mode="widthFix" 
+      bindload="imageLoad"
+      />
+  </view>
 </page>

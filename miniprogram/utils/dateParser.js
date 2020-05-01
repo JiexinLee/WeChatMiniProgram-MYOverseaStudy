@@ -3,7 +3,6 @@
 // dateParser.js
 //时间戳转换成日期时间
 
-
 function date_time(val) {
 
 
@@ -31,6 +30,4 @@ function date_time(val) {
   return theTime;
 }
 
-module.exports = {
-  date_time: date_time
-}
+module.exports.date_time = date_time

@@ -1,9 +1,13 @@
 App({
+  globalData: {
+    db: null //连接数据库
+  },
   /**
    * 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
    */
   onLaunch: function () {
     wx.cloud.init();
+    this.globalData.db = wx.cloud.database();
   },
 
   /**

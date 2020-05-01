@@ -1,5 +1,4 @@
 /** app.wxss **/
-
 page, view, text, swiper, image, navigator {
   margin: 0;
   padding: 0;

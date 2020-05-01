@@ -62,7 +62,7 @@
         <text>热门学校</text>
       </view>
       <view class="container_subtitle">
-        <navigator>
+        <navigator url="/pages/hotUnis/hotUnis">
           <text>更多学校</text>
         </navigator>
       </view>
@@ -76,7 +76,7 @@
           <text>热门专业</text>
         </view>
         <view class="container_subtitle">
-          <navigator>
+          <navigator url="/pages/hotMajors/hotMajors">
             <text>更多专业</text>
           </navigator>
         </view>
@@ -104,7 +104,7 @@
           <text>留学攻略</text>
         </view>
         <view class="container_subtitle">
-          <navigator>
+          <navigator url="/pages/studyingChannel/studyingChannel">
             <text>更多攻略</text>
           </navigator>
         </view>
