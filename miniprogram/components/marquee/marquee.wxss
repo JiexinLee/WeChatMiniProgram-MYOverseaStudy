@@ -1,0 +1,10 @@
+.marquee_container {
+  position: relative;  
+  width: 100%;
+}
+
+.marquee_text {
+  position: absolute;
+  white-space: nowrap;
+  top: 0;
+}

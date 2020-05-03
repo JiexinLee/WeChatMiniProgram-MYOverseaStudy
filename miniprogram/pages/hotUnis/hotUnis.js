@@ -1,4 +1,4 @@
-import Toast from "@vant/weapp/toast";
+
 var sortRule = false;
 Page({
   /**
