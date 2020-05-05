@@ -11,7 +11,7 @@ Page({
     searchValue: '',
     materials:  [],
     strategies: [],
-    activities: []
+    activities: [],
   },
   /**
    * 小程序页面加载完成
@@ -39,7 +39,7 @@ Page({
         this.setData({
           activities: datas
         });
-        console.log(this.data.materials)
+        console.log(this.data.activities)
       }
     })
 
@@ -52,7 +52,7 @@ Page({
         this.setData({
           strategies: datas
         });
-        console.log(this.data.materials)
+        console.log(this.data.strategies)
       }
     })
   },
@@ -184,10 +184,6 @@ Page({
     })
   },
 
-  onShow: function () {
-
-  },
-
   /**
    * 转换时间
    */
@@ -206,7 +202,5 @@ Page({
     let result = new Date(date).getTime();
     return result;
   }
-
-
   
 })

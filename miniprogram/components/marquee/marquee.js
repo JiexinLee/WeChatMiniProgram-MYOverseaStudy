@@ -6,7 +6,7 @@ Component({
   properties: {
     text: {
       type: String,
-      value: 'ILoveEwei'
+      value: "longlonglonglonglonglong"
     }
   },
 
@@ -49,9 +49,7 @@ Component({
       length: length,
       windowWidth: windowWidth
     });
-    if(length > windowWidth) {
-      console.log("l: "+ length + "  windwidth: "+ windowWidth)
-      this._scrolling();
-    }
+    setTimeout(()=>{ this._scrolling() }, 1500);
+    
   }
 })
