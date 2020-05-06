@@ -243,3 +243,18 @@
   align-items: center;
   color: #fff;
 }
+
+/*悬浮按钮*/
+.float-button {
+  position: fixed;
+  height: 45px;
+  width: 45px;
+  bottom: 20px;
+  right: 30px;
+  background-color: rgba(0,0,0,0.2);
+  border-radius:50px;
+  box-shadow: 2px 2px 3px #2F4F4F;
+  color:#fff;
+  text-align: center;
+}
+.float-button:hover {background-color:rgba(0,0,0,0.6)}

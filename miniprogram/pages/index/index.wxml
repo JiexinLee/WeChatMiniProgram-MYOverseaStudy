@@ -132,5 +132,7 @@
     功能改为浮动的 message窗口
    -->
   <!-- <float-button/> -->
+  <button class="float-button">...
+  </button>
   <!-- end: float Message -->
 </page>
