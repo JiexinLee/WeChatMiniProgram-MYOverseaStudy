@@ -1,5 +1,6 @@
 var app = getApp();
-const video_list = app.globalData.db.collection("videos");
+var db = app.globalData.db;
+const video_list = db.collection("videos");
 Page({
 
   /**
@@ -8,8 +9,32 @@ Page({
   data: {
     searchValue: '',
     videos: [],
+    videoIndex: '',
   },
 
+  /**
+   * 点击播放视频
+   */
+  videoPlay: function (e) {
+    var id = e.currentTarget.dataset.pid,
+      videoindex = e.currentTarget.dataset.index; 
+    var videoCtx = wx.createVideoContext(id);    //获取点击的视频
+
+    if (!this.data.videoindex) {    //没有其他视频播放时
+      this.setData({
+        videoindex: videoindex
+      })
+      videoCtx.play();
+    } else {    // 有其他视频正在播放
+      var videoCtxPrev = wx.createVideoContext('myVideo' + this.data.videoindex); //找到当前正在播放的视频
+      videoCtxPrev.pause();    //暂停
+      this.setData({
+        videoindex: videoindex
+      })
+      videoCtx.play();    //播放点击的视频
+    }
+  },
+  
   /**
    * 生命周期函数--监听页面加载
    */
@@ -56,7 +81,7 @@ Page({
   /**
    * 点击搜索的时候查找
    */
-  searchClick: function (e) {
+  searchClick: function () {
     var that = this;
     wx.showLoading({
       title: '搜索中...',

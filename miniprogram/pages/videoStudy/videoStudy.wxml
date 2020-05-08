@@ -5,14 +5,13 @@
 <page>
   <!-- 搜索框 -->
   <view>
-    <van-search
+    <van-search 
       value="{{ searchValue }}"
       placeholder="请搜索相关专业名称"
       use-action-slot
       shape="round"
       bind:change="searchChange"
       bind:search="searchClick"
-      bind:clear="searchClear"
       background="var(--themeColorBlue)"
     >
       <view slot="action" bind:tap="searchClick" style="color: #fff;">搜索</view>
@@ -28,11 +27,14 @@
       wx:key = 'index'
     >
       <video class="video"
-        id = "{{item.id}}"
+        id="myVideo{{item._id}}"
         src="{{item.video_src}}"
         show-center-play-btn = "true"
         poster = "{{item.poster}}"
         title = "{{item.title}}"
+        bindplay = "videoPlay"
+        data-pid="myVideo{{item._id}}"
+        data-index="{{item._id}}"
       />
 
       <view class="video_text">
