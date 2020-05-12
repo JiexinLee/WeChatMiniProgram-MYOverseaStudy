@@ -132,7 +132,10 @@
     功能改为浮动的 message窗口
    -->
   <!-- <float-button/> -->
-  <button class="float-button">...
-  </button>
+<button class="float-button" open-type="contact" bindcontact="handleContact">
+  <image class="fb-img" src="../../images/searchBar/message.png"></image>
+  <view class="fb-txt">客服</view>
+</button>
+
   <!-- end: float Message -->
 </page>

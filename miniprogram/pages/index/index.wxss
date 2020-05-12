@@ -247,14 +247,43 @@
 /*悬浮按钮*/
 .float-button {
   position: fixed;
-  height: 45px;
-  width: 45px;
-  bottom: 20px;
-  right: 30px;
+  width: 12%;
+  height: 90rpx;
+  bottom: 50rpx;
+  z-index: 2;
+  margin-left: 85%;
   background-color: rgba(0,0,0,0.2);
-  border-radius:50px;
-  box-shadow: 2px 2px 3px #2F4F4F;
-  color:#fff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 4rpx 4rpx 6rpx #2F4F4F;
   text-align: center;
 }
-.float-button:hover {background-color:rgba(0,0,0,0.6)}
+.float-button:hover {
+  background-color:rgba(0,0,0,0.6);
+}
+.fb-img {
+  width: 50rpx;
+  height: 50rpx;
+}
+.fb-txt {
+  vertical-align: top;
+  margin-top: -50rpx;
+  font-size: 22rpx;
+  color: #fff;
+}
+button {
+  box-sizing: border-box;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  line-height: 2.55;
+  border-radius: 5px;
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+  color: #000;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+button::after {
+  content: none;
+}
