@@ -7,7 +7,7 @@
   <view>
     <van-search 
       value="{{ searchValue }}"
-      placeholder="请搜索相关专业名称"
+      placeholder="请搜索视频名称"
       use-action-slot
       shape="round"
       bind:change="searchChange"
