@@ -91,7 +91,15 @@ Page({
       {
         
       }
-    ]
+    ],
+    /**
+     * 客服悬浮按钮数据
+     */
+     buttonTop: 1000,
+     buttonLeft: 0,
+     windowHeight: '',
+     windowWidth: ''
+    // startPoint: ""
   },
 
   /**
@@ -107,6 +115,23 @@ Page({
     // })
     this.getSwiperList();
 
+    //客服按钮
+    var that =this;
+    var HWrate = 0;
+    wx.getSystemInfo({
+      success: function (res) {
+        console.log(res);
+        // 屏幕高度，宽度
+        console.log('height=' + res.windowHeight);
+        console.log('width=' + res.windowWidth);
+        // 高度,宽度 转换单位为rpx
+        HWrate = 750/res.windowWidth;
+        that.setData({
+            windowHeight: res.windowHeight*HWrate,
+            windowWidth: res.windowWidth*HWrate
+        })
+      }
+    })
   },
 
   getSwiperList(){
@@ -124,6 +149,46 @@ Page({
     //     ...
     //   })
     // })
+  },
+
+  /**
+   *拖移客服按钮 
+   */
+  buttonStart: function (e) {
+   this.setData({
+      startPoint: e.touches[0]
+   })
+  },
+  buttonMove: function (e) {
+    var startPoint1 = this.data.startPoint;
+    var endPoint = e.touches[e.touches.length - 1];
+    var translateX = endPoint.clientX - startPoint1.clientX;
+    var translateY = endPoint.clientY - startPoint1.clientY;
+    this.setData({
+      startPoint: endPoint
+    })
+    var buttonTop = this.data.buttonTop + translateY;
+    var buttonLeft = this.data.buttonLeft + translateX;
+
+    //是否溢出屏幕
+    if (buttonLeft >= 0) {
+      buttonLeft = 0;
+    }
+    if (buttonLeft - 140 <= -this.data.windowWidth) {
+      buttonLeft = -this.data.windowWidth + 140;
+    }
+    if (buttonTop <= 0 ) {
+      buttonTop = 0;
+    }
+    if (buttonTop + (this.data.windowHeight*0.1) >= this.data.windowHeight) {
+      buttonTop = this.data.windowHeight*0.90;
+    }
+    this.setData({
+      buttonTop: buttonTop,
+      buttonLeft: buttonLeft
+    })
+  },
+  buttonEnd: function (e) {
   }
-  
+
 })

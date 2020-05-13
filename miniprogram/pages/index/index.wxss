@@ -257,9 +257,14 @@
   border-radius: 50%;
   box-shadow: 4rpx 4rpx 6rpx #2F4F4F;
   text-align: center;
+  line-height: 79rpx;
+  padding-left: 0px;
+  padding-right: 0px;
+  overflow: hidden;
 }
-.float-button:hover {
-  background-color:rgba(0,0,0,0.6);
+.fb-hover {
+  transform: scale(1.2, 1.2);
+  background-color: rgba(0,0,0,0.6);
 }
 .fb-img {
   width: 50rpx;
@@ -271,19 +276,4 @@
   font-size: 22rpx;
   color: #fff;
 }
-button {
-  box-sizing: border-box;
-  font-size: 18px;
-  text-align: center;
-  text-decoration: none;
-  line-height: 2.55;
-  border-radius: 5px;
-  -webkit-tap-highlight-color: transparent;
-  overflow: hidden;
-  color: #000;
-  padding-left: 0px;
-  padding-right: 0px;
-}
-button::after {
-  content: none;
-}
+

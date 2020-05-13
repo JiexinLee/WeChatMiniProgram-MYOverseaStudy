@@ -4,7 +4,6 @@
     <searchBar></searchBar>
   </view>
   
-
   <!-- 横幅 start 显示最近/最热搜索关键词 -->
   <view class="index_banner">
     <banner></banner>
@@ -132,10 +131,15 @@
     功能改为浮动的 message窗口
    -->
   <!-- <float-button/> -->
-<button class="float-button" open-type="contact" bindcontact="handleContact">
+<button class="float-button" hover-class="fb-hover" open-type="contact" catchtouchmove="buttonMove" bindtouchstart="buttonStart" bindtouchend="buttonEnd" style="top:{{buttonTop}}rpx;left:{{buttonLeft}}rpx;"
+>
   <image class="fb-img" src="../../images/searchBar/message.png"></image>
   <view class="fb-txt">客服</view>
 </button>
+
+<text>{{HWrate}}/{{windowHeight}} + {{windowWidth}} /Top{{buttonTop}}
+/Left{{buttonLeft}}/
+X{{translateX}}/Y{{translateY}}</text>
 
   <!-- end: float Message -->
 </page>
