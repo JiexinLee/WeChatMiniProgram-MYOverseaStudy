@@ -212,7 +212,7 @@ Page({
     const index = activeId.indexOf(detail.id);
     if (index > -1) {
       activeId.splice(index, 1);
-    } else {
+    } else { 
       activeId.push(detail.id);
     }
 

@@ -2,34 +2,36 @@
   <!-- 搜索栏 -->
   <view>
     <van-search 
-    value="{{ value }}" 
-    placeholder="请输入搜索关键词" 
-    shape="round"
-    clearable="true"
-    background="var(--themeColorBlue)"
-    />
+      value="{{ searchValue }}"
+      placeholder="请搜索问题"
+      use-action-slot
+      shape="round"
+      bind:change="searchChange"
+      bind:search="searchClick"
+      background="var(--themeColorBlue)"
+    >
+    <view slot="action" bind:tap="searchClick" style="color: #fff;">搜索</view>
+    </van-search>
   </view>
   <!-- 搜索栏 end -->
 
   <!-- content -->
   <view class="content">
     <van-collapse value="{{ activeName }}" bind:change="onChange" >
-      <view class="wrapper">
-        <van-collapse-item title="请问悉尼大学雅思成绩要求多少？" name="1" class="blank" icon="../../../../images/testimg.jpeg">
-        留学科代表: 大学的雅思要求总分6.5分哦大学的雅思要求总分6.5分哦大学的雅思要求总分6.5分哦大学的雅思要求总分6.5分哦大学的雅思要求总分6.5分哦
+      <view class="wrapper"
+        wx:for = "{{questions}}"
+        wx:key = 'index'
+      >
+        <van-collapse-item title="{{item.title}}" name="{{item._id}}" class="blank" icon="{{item.icon}}">
+          <view wx:if="{{item.answer == ''}}">
+            亲, 此问题还没有人回答哦..
+          </view>
+          <view wx:else>
+            {{item.responser}}: {{item.answer}}
+          </view>
         </van-collapse-item>
       </view>
 
-      <view class="wrapper">
-        <van-collapse-item title="请问阿德莱德大学雅思成绩要求多少？" name="2" icon="../../../../images/testimg.jpeg">
-        留学科代表: 大学的雅思要求总分6.5分哦
-        </van-collapse-item>
-      </view>
-      <view class="wrapper">
-        <van-collapse-item title="请问南澳大学雅思成绩要求多少？" name="3" icon="../../../../images/testimg.jpeg">
-          留学科代表: 南澳大学的雅思要求总分6.5分哦大学的雅思要求总分6.5分哦大学的雅思要求总分6.5分哦大学的雅思要求总分6.5分哦大学的雅思要求总分6.5分哦大学的雅思要求总分6.5分哦大学的雅思要求总分6.5分哦大学的雅思要求总分6.5分哦
-        </van-collapse-item>
-      </view>
     </van-collapse>
   </view>
   <!-- end content -->
@@ -37,15 +39,16 @@
   <view class="footer">
     <van-cell-group>
       <van-field
-        value="{{ sms }}"
+        value="{{ typingValue }}"
         center
         clearable
-        left-icon="smile-o"
+        left-icon="comment-o"
         placeholder="请输入问题让我们给您解答"
         border="{{ false }}"
         use-button-slot
+        bind:change = "typingValueChanging"
       >
-        <van-button slot="button" size="small" type="primary">发送</van-button>
+        <van-button open-type="getUserInfo" bindgetuserinfo="sendingQuestion" slot="button" size="small" type="primary">发送</van-button>
       </van-field>
     </van-cell-group>
   </view>

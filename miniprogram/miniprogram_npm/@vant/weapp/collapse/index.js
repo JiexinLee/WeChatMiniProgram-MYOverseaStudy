@@ -9,7 +9,7 @@ component_1.VantComponent({
     },
     props: {
         value: {
-            type: null,
+            type: null, 
             observer: 'updateExpanded'
         },
         accordion: {

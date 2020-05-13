@@ -18,17 +18,25 @@
   
   <!-- content  -->
   <view class="content">
-
+      
       <view class="group-title">
         <van-cell title="留学材料" value="更多" size="large" />
       </view>
+      
       <view class="group-content"
         wx:for = "{{materials}}"
         wx:key = 'index'
       >
-        <view class="group-content-left" style="{{orientation}}:{{marqueeDistance}}px;">
-          {{item.title}}
+        <view class="group-content-left"
+          wx:if="{{item.title.length > 16}}"
+        >
+          <marquee text="{{item.title}}"></marquee>
         </view> 
+        <view class="group-content-left"
+          wx:elif="{{item.title.length <= 15}}"
+          >
+          <text>{{item.title}}</text>
+        </view>
         <view class="group-content-right">
           <van-icon name="notes-o"/>
           <view>{{item.click_number}}</view>
@@ -45,9 +53,16 @@
       wx:for = "{{strategies}}"
       wx:key = 'index'
     >
-      <view class="group-content-left">
-        {{item.title}}
-      </view>
+       <view class="group-content-left"
+          wx:if="{{item.title.length > 16}}"
+        >
+          <marquee text="{{item.title}}"></marquee>
+        </view> 
+        <view class="group-content-left"
+          wx:elif="{{item.title.length <= 15}}"
+          >
+          <text>{{item.title}}</text>
+        </view>
       <view class="group-content-right">
         <van-icon name="notes-o"/>
         <view>{{item.click_number}}</view>
@@ -65,9 +80,16 @@
       wx:for = "{{activities}}"
       wx:key = 'index'
     >
-      <view class="group-content-left">
-        {{item.title}}
-      </view>
+       <view class="group-content-left"
+          wx:if="{{item.title.length > 16}}"
+        >
+          <marquee text="{{item.title}}"></marquee>
+        </view> 
+        <view class="group-content-left"
+          wx:elif="{{item.title.length <= 15}}"
+          >
+          <text>{{item.title}}</text>
+        </view>
       <view class="group-content-right">
         <van-icon name="notes-o"/>
         <view>{{item.click_number}}</view>

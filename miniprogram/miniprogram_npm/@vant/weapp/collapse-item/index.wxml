@@ -10,7 +10,7 @@
     is-link="{{ isLink }}"
     clickable="{{ clickable }}"
     border="{{ border && expanded }}"
-    class="{{ utils.bem('collapse-item__title', { disabled, expanded }) }}"
+    class="onlyOneLine {{ utils.bem('collapse-item__title', { disabled, expanded }) }}"
     right-icon-class="van-cell__right-icon"
     custom-class="van-cell"
     hover-class="van-cell--hover"
