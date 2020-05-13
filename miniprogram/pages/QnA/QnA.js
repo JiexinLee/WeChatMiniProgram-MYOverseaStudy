@@ -7,7 +7,8 @@ Page({
     questions:[],
     searchValue: '',
     questionsValue: '',
-    userAvatar: ''
+    userAvatar: '',
+    typingValue: ''
   },
   onChange(event) {
     this.setData({
@@ -77,18 +78,23 @@ Page({
     }
   },
 
+  typingValueChanging: function(e) {
+    this.setData({
+      typingValue: e.detail
+    })
+  },
+
   sendingQuestion: function (e) {
     wx.showLoading({
       title: '发布中...',
     })
     var that = this;
-    console.log(e.detail.userInfo.avatarUrl)
     this.setData({
       userAvatar: e.detail.userInfo.avatarUrl
     })
     qna_list.add({
       data: {
-        title: "请问南澳大学的成绩要求多少?",
+        title: that.data.typingValue,
         responser: "",
         answer: "",
         icon: that.data.userAvatar
@@ -96,10 +102,19 @@ Page({
       success: res => {
         qna_list.get({
           success: res => {
-            wx.hideLoading();
+            wx.showToast({
+              title: '发布成功!',
+            });
             var datas = res.data;
             this.setData({
-              questions: datas
+              questions: datas,
+              typingValue: ''
+            });
+          },
+          fail: res => {
+            wx.showToast({
+              title: '发布失败!',
+              image: "../../../../images/error.png"
             });
           }
         })

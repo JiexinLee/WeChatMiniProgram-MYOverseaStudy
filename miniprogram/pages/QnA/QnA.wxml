@@ -39,13 +39,14 @@
   <view class="footer">
     <van-cell-group>
       <van-field
-        value="{{ sms }}"
+        value="{{ typingValue }}"
         center
         clearable
         left-icon="comment-o"
         placeholder="请输入问题让我们给您解答"
         border="{{ false }}"
         use-button-slot
+        bind:change = "typingValueChanging"
       >
         <van-button open-type="getUserInfo" bindgetuserinfo="sendingQuestion" slot="button" size="small" type="primary">发送</van-button>
       </van-field>
