@@ -1,6 +1,7 @@
 
 Page({
   data: {
+    showModal: false,
     activeName: [],
     qalist: [
       {
@@ -19,15 +20,20 @@ Page({
       }
     ]
   },
+  onLoad: function (options) {
+
+  },
   onChange(event) {
     this.setData({
       activeName: event.detail
     });
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+  showDialogBtn: function() {
+    this.setData({
+      showModal: true
+    })
+    console.log(this.data.showModal);
+  },
+  
 
-  }
 })

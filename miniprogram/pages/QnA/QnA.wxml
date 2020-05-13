@@ -31,6 +31,11 @@
         </van-collapse-item>
       </view>
     </van-collapse>
+
+    <view class="imageContainer" wx:if="{{showModal}}">
+      <image src="../../images/weichatbarcode/barcode.png" />
+</view>
+
   </view>
   <!-- end content -->
   <!-- typing field -->
@@ -45,7 +50,8 @@
         border="{{ false }}"
         use-button-slot
       >
-        <van-button slot="button" size="small" type="primary">发送</van-button>
+        <van-button slot="button" size="small" type="primary" bindtap="sendQuestion">发送</van-button>
+        <van-button slot="button" style="padding-left:10px" size="small" type="primary" bindtap="showDialogBtn">添加顾问微信</van-button>
       </van-field>
     </van-cell-group>
   </view>
