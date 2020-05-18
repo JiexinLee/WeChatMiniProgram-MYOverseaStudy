@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    showModal: false,
     search_detail:'',
     show: false,
     mainActiveIndex: 0,
@@ -364,9 +365,18 @@ Page({
       if ( !( (chinese_name.indexOf(search_key)) ||
             (tag == search_key) ||
             (location == search_key)))  {
+              this.setData({
+                showModal: false
+              })
               result_unis.push(this.data.universitiesList[i]);
               console.log(result_unis);
             }
+            else {
+              this.setData({
+                showModal: true
+              })
+            }
+
     }
     //console.log(this.data.showed_universities);
     this.setData({

@@ -28,6 +28,11 @@
   </view>
 
   <view class="container">
+
+      <view class="container_uniDetail_title" wx:if="{{showModal}}">
+          <text>亲，您的结果，我找不到，要不换个词试试吧</text>
+      </view>
+
     <view class="index_container_content_uni" 
       wx:for="{{showed_universities}}"
       wx:key="index"
@@ -56,12 +61,8 @@
         <view class="acceptance">录取率: {{item.acception}}%</view>
       </view>
     </view>
-    <view class="index_container_content_uni"
-      wx:if="{{showed_universities==null}}" >
-      <view class="container_uniDetail_title">
-          <text>亲，您的结果，我找不到，要不换个词试试吧</text>
-      </view>
-    </view>
+
+
 </view>
   </view>
   <!-- 排序 end -->
