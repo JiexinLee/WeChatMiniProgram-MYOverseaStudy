@@ -384,6 +384,12 @@ Page({
     })
   },
 
+  showDetail: function(){
+    wx.navigateTo({
+      url: '../uniDetail/uniDetail',
+    })
+  },
+
   // 点击 排序功能
   mySort: function (e) {
     //property 根据什么排序

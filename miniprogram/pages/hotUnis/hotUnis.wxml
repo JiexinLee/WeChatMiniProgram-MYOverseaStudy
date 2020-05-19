@@ -36,11 +36,12 @@
     <view class="index_container_content_uni" 
       wx:for="{{showed_universities}}"
       wx:key="index"
+      bindtap="showDetail"
     >
       <view class="container_uniIcon">
         <image src="{{item.uni_icon}}" lazy-load="true"></image>
       </view>
-      <view class="container_uniDetail">
+      <view class="container_uniDetail" >
         <view class="container_uniDetail_title">
           <text>{{item.uni_name}}</text>
           <view class="container_uniRank">
