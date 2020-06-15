@@ -101,12 +101,20 @@
 					"id": -1,
 					"name": "视频留学",
 					"pathName": "pages/videoStudy/videoStudy",
+					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
 					"name": "英语考试",
 					"pathName": "pages/engExam/engExam",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "留学频道-二级页面",
+					"pathName": "pages/studyingChannel/studyingChannelItem/studyingChannelItem",
 					"scene": null
 				}
 			]

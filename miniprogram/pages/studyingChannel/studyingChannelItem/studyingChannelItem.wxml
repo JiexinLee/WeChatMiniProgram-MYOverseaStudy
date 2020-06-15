@@ -1,0 +1,32 @@
+<page>
+  <view class="header">
+    <view class="title">
+      <text>澳洲留学新闻</text>
+    </view>
+    <view class="subtitle">
+      <text>发布时间: 1111111</text>
+      <text>作者: </text>
+      <text>阅读量: </text>
+    </view>
+  </view>
+  <view class="content">
+    <view class="content-image">
+      <van-image
+        widthFix
+        src="https://img.yzcdn.cn/vant/cat.jpeg"
+        width="96%"
+        height="100%"
+      />
+    </view>
+    <view class="content-text" style="overflow:{{textHidden}}; {{hasHeight}}">
+      <text>
+        阿德莱德大学(The University of Adelaide), 位于阿德莱德市 德莱德大学(The University of Adelaide), 位于阿德莱德市德莱德大学(The University of Adelaide), 位于阿德莱德市德莱德大学(The University of Adelaide), 位于阿德莱德市德莱德大学(The University of Adelaide), 位于阿德莱德市德莱德大学(The University of Adelaide), 位于阿德莱德市,位于阿德莱德市德莱德大学(The University of Adelaide), 位于阿德莱德市德莱德大学(The University of Adelaide), 位于阿德莱德市德莱德大学(The University of Adelaide), 位于阿德莱德市德莱德大学(The University of Adelaide), 位于阿德莱德市位于阿德莱德市德莱德大学(The University of Adelaide), 位于阿德莱德市德莱德大学(The University of Adelaide), 位于阿德莱德市德莱德大学(The University of Adelaide), 位于阿德莱德市德莱德大学(The University of Adelaide), 位于阿德莱德市位于阿德莱德市德莱德大学(The University of Adelaide), 位于阿德莱德市德莱德大学(The University of Adelaide), 位于阿德莱德市德莱德大学(The University of Adelaide), 位于阿德莱德市德莱德大学(The University of Adelaide), 位于阿德莱德市
+      </text>
+    </view>
+  </view>
+  <view class="footer">
+    <view class="collapse-button">
+      <van-button color="var(--themeColorBlue)" round plain bind:click="collapse"> 点击查看全部/收起 </van-button>
+    </view>
+  </view>
+</page>

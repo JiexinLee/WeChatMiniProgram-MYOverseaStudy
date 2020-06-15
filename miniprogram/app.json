@@ -8,7 +8,8 @@
     "pages/QnA/QnA",
     "pages/engExam/engExam",
     "pages/hotUnis/hotUnis",
-    "pages/studyingChannel/studyingChannel"
+    "pages/studyingChannel/studyingChannel",
+    "pages/studyingChannel/studyingChannelItem/studyingChannelItem"
   ],
   "usingComponents": {
     "van-button": "@vant/weapp/button",

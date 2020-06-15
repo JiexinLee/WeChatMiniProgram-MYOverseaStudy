@@ -16,8 +16,10 @@ page {
   --bannerContentColor: #ff9a24;
   /* search bar 字体颜色 */
   --searchBarFontColor: #999999;
-  /*background 灰色*/
+  /* background 灰色*/
   --backgroundGray: #e1e6ec;
+  /* font 灰色 */
+  --fontGray : #999999;
   
   /*  */
   --whiteColor: #fff;
