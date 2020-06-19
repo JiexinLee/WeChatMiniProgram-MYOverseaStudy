@@ -201,6 +201,17 @@ Page({
   dateToMs: function(date){
     let result = new Date(date).getTime();
     return result;
+  },
+
+  /**
+   * 留学频道item跳转
+   */
+  studyChannelDetail: function(event) {
+    var itemNo = event.currentTarget.id;
+    // console.log(studyChannelNo);
+    wx.navigateTo({
+      url: './studyingChannelItem/studyingChannelItem?itemNo=' + itemNo,
+    })
   }
   
 })

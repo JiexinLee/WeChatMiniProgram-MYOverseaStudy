@@ -26,14 +26,19 @@
       <view class="group-content"
         wx:for = "{{materials}}"
         wx:key = 'index'
+        
       >
         <view class="group-content-left"
           wx:if="{{item.title.length > 16}}"
+          catchtap="studyChannelDetail"
+          id="{{item._id}}"
         >
           <marquee text="{{item.title}}"></marquee>
         </view> 
         <view class="group-content-left"
           wx:elif="{{item.title.length <= 15}}"
+          catchtap="studyChannelDetail"
+          id="{{item._id}}"
           >
           <text>{{item.title}}</text>
         </view>
@@ -55,11 +60,15 @@
     >
        <view class="group-content-left"
           wx:if="{{item.title.length > 16}}"
+          catchtap="studyChannelDetail"
+          id="{{item._id}}"
         >
           <marquee text="{{item.title}}"></marquee>
         </view> 
         <view class="group-content-left"
           wx:elif="{{item.title.length <= 15}}"
+          catchtap="studyChannelDetail"
+          id="{{item._id}}"
           >
           <text>{{item.title}}</text>
         </view>
@@ -82,11 +91,15 @@
     >
        <view class="group-content-left"
           wx:if="{{item.title.length > 16}}"
+          catchtap="studyChannelDetail"
+          id="{{item._id}}"
         >
           <marquee text="{{item.title}}"></marquee>
         </view> 
         <view class="group-content-left"
           wx:elif="{{item.title.length <= 15}}"
+          catchtap="studyChannelDetail"
+          id="{{item._id}}"
           >
           <text>{{item.title}}</text>
         </view>
