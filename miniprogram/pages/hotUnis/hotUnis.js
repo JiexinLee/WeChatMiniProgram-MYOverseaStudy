@@ -1,4 +1,5 @@
-
+const db = wx.cloud.database(); //连接数据库
+const unilist = db.collection("hotUnis");
 var sortRule = false;
 Page({
   /**
@@ -9,6 +10,7 @@ Page({
     mainActiveIndex: 0,
     activeId: [],
     max: 100,
+    unis: [],
     items: [
       {
         // 导航名称
@@ -135,81 +137,22 @@ Page({
         ]
       }
     ],
+  },
 
-    universitiesList: [
-      {
-        uni_icon: "../../images/unis/UoM.png",
-        uni_name: "墨尔本大学",
-        uni_name_eng: "The University of Melbourne",
-        rank: 38,
-        tuition: [
-          40000, 50000
-        ],
-        location: "Melbourne",
-        requirements: [
-          58, 6.5
-        ],
-        acception: 92.3,
-        agency_icon: "",
-        counter: 1,
-        migratable: true,
-        tag: "ANU"
-      },
-      {
-        uni_icon: "../../images/unis/UoM.png",
-        uni_name: "阿德莱德大学",
-        uni_name_eng: "The University of Adelaide",
-        rank: 108,
-        tuition: [
-          30000, 48000
-        ],
-        location: "Adelaide",
-        requirements: [
-          58, 6.5
-        ],
-        acception: 91.5,
-        agency_icon: "",
-        counter: 12,
-        migratable: true,
-        tag: "ANU"
-      },
-      {
-        uni_icon: "../../images/unis/UoM.png",
-        uni_name: "澳洲国立大学",
-        uni_name_eng: "Australian National University",
-        rank: 30,
-        tuition: [
-          37000, 48000
-        ],
-        location: "Canberra",
-        requirements: [
-          58, 6.5
-        ],
-        acception: 92.3,
-        agency_icon: "",
-        counter: 9,
-        migratable: false,
-        tag: "G8"
-      },
-      {
-        uni_icon: "../../images/unis/UoM.png",
-        uni_name: "悉尼大学",
-        uni_name_eng: "The University of Sydney",
-        rank: 57,
-        tuition: [
-          42000, 48000
-        ],
-        location: "Sydney",
-        requirements: [
-          58, 6.5
-        ],
-        acception: 98.1,
-        agency_icon: "",
-        counter: 10,
-        migratable: true,
-        tag: "IRU"
+  /**
+   * 页面初始化
+   */
+  onLoad: function(options){
+    unilist.get({
+      success: res => {
+        var datas = res.data;
+        
+        this.setData({
+          unis: datas
+        });
+        console.log(this.data.unis)
       }
-    ]
+    })
   },
 
   onClickNav({ detail = {} }) {
@@ -257,13 +200,23 @@ Page({
       duration: 1200
     })
   },
-
+  /**
+   * 转到细节
+   */
+  uniDetail: function (event) {
+    var itemNo = event.currentTarget.id;
+    console.log(itemNo)
+    wx.navigateTo({
+      url: './hotUniItem/hotUniItem?itemNo=' + itemNo,
+    })
+    
+  },
   // 点击 排序功能
   mySort: function (e) {
     //property 根据什么排序
     var property = e.currentTarget.dataset.property;
     var self = this;
-    var universitiesList = self.data.universitiesList;
+    var universitiesList = self.data.unis;
     sortRule = !sortRule; // 正序倒序
     if (sortRule) {
       wx.showToast({
@@ -279,7 +232,7 @@ Page({
       })
     }
     self.setData({
-      universitiesList: universitiesList.sort(self.compare(property, sortRule))
+      unis: universitiesList.sort(self.compare(property, sortRule))
     })
   },
 

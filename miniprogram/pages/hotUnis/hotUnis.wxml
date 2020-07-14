@@ -3,7 +3,7 @@
   <view>
     <van-search
       value="{{ searchValue }}"
-      placeholder="请搜索相关专业名称"
+      placeholder="请搜索相关学校名称"
       use-action-slot
       shape="round"
       bind:change="searchChange"
@@ -20,7 +20,7 @@
   <view class="filter"> 
     <van-button type="default" size="small" bindtap="mySort" data-property="uni_name" class="filter_left">默认排序</van-button>
     <van-button type="default" size="small" bindtap="mySort" data-property="counter" class="filter_left">热门搜索</van-button>
-    <van-button type="default" size="small" bindtap="mySort" data-property="rank" class="filter_left">世界排名</van-button>
+    <van-button type="default" size="small" bindtap="mySort" data-property="uni_rank" class="filter_left">世界排名</van-button>
     
     
     <van-button type="default" size="small" bind:click="popUpShow" class="filter_right">筛选<van-icon name="filter-o" size="25rpx"/>
@@ -29,8 +29,10 @@
 
   <view class="container">
     <view class="index_container_content_uni" 
-      wx:for="{{universitiesList}}"
+      wx:for="{{unis}}"
+      catchtap="uniDetail"
       wx:key="index"
+      id="{{item._id}}"
     >
       <view class="container_uniIcon">
         <image src="{{item.uni_icon}}" lazy-load="true"></image>
@@ -39,17 +41,17 @@
         <view class="container_uniDetail_title">
           <text>{{item.uni_name}}</text>
           <view class="container_uniRank">
-            <view class="container_uniRank_content">QS:{{item.rank}}</view>
+            <view class="container_uniRank_content">QS:{{item.uni_rank}}</view>
           </view>
         </view>
         <view class="container_uniDetail_block">
           <text>{{item.uni_name_eng}}</text>
         </view>
         <view class="container_uniDetail_block">
-          <text>学费: {{ item.tuition[0] }}-{{ item.tuition[1] }} 澳币/年</text>
+          <text>学费: {{ item.tuition.min }}-{{ item.tuition.max }} 澳币/年</text>
         </view>
       <view class="requirements"> 
-        <text>PTE/雅思: 本科 {{item.requirements[0]}}/{{item.requirements[1]}}, 硕士 {{item.requirements[0]}}/{{item.requirements[1]}}</text>
+        <text>PTE/雅思: 本科 {{item.eng_requirement.bachelor.pte}}/{{item.eng_requirement.bachelor.ielts}}, 硕士 {{item.eng_requirement.master.pte}}/{{item.eng_requirement.master.ielts}}</text>
       </view>
       <view class="others">
         <view class="location"><van-icon name="location" size="20rpx"/><text>{{item.location}}</text></view>
@@ -63,7 +65,7 @@
   <van-popup 
     show="{{ show }}" 
     closeable 
-    custom-style = "width:90%; height: 70%" 
+    custom-style = "width:90%; height: 100%" 
     position="right" 
     bind:close="popUpClose"
   >
@@ -75,7 +77,7 @@
     max="{{max}}"
     bind:click-nav="onClickNav"
     bind:click-item="onClickItem"
-    height="{{300}}"
+    height="{{400}}"
   />
   <view class="filter-buttons">
     <van-button round type="default" bind:click="resetAll" style="margin-right: 20rpx;">重置</van-button>

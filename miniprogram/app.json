@@ -8,7 +8,9 @@
     "pages/QnA/QnA",
     "pages/engExam/engExam",
     "pages/hotUnis/hotUnis",
-    "pages/studyingChannel/studyingChannel"
+    "pages/studyingChannel/studyingChannel",
+    "pages/studyingChannel/studyingChannelItem/studyingChannelItem",
+    "pages/hotUnis/hotUniItem/hotUniItem"
   ],
   "usingComponents": {
     "van-button": "@vant/weapp/button",
@@ -27,7 +29,9 @@
     "van-cell-group": "@vant/weapp/cell-group",
     "van-notice-bar": "@vant/weapp/notice-bar",
     "van-image": "@vant/weapp/image",
-    "van-loading": "@vant/weapp/loading"
+    "van-loading": "@vant/weapp/loading",
+    "van-skeleton": "@vant/weapp/skeleton",
+    "van-divider": "@vant/weapp/divider"
   },
   "window": {
     "navigationBarBackgroundColor": "#33beb5",

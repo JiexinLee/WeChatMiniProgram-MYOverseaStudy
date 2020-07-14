@@ -1,0 +1,38 @@
+page {
+  background-color: white;
+}
+.title text{
+  font-size: 38rpx;
+}
+
+.subtitle text{
+  margin-right: 25rpx;
+}
+
+.title {
+  text-align: center;
+  margin: 20rpx;
+}
+
+.subtitle {
+  text-align: center;
+  margin: 10rpx;
+  color: var(--fontGray);
+  font-size: 24rpx;
+}
+
+.content-image {
+  width: 100%;
+  height: 500rpx;
+  margin-top: 20rpx;
+  text-align: center;
+}
+
+.content-text {
+  margin: 20rpx;
+}
+
+.collapse-button {
+  margin-top: 20rpx;
+  text-align: center;
+}

@@ -1,0 +1,37 @@
+<van-skeleton title row="5" title-width="70%" loading="{{ loading }}">
+
+<page>
+    <view class="header">
+      <view class="title">
+        <text>{{materials.title || strategies.title || activities.title}}</text>
+      </view>
+      <view class="subtitle">
+        <text>发布时间: {{materials.date || strategies.date || activities.date}}</text>
+        <text>作者: {{materials.author || strategies.author || activities.author}}</text>
+        <text>阅读量: {{materials.click_number || strategies.click_number || activities.click_number}}</text>
+      </view>
+    </view>
+    <view class="content">
+      <view class="content-image">
+        <van-image
+          widthFix
+          src="https://img.yzcdn.cn/vant/cat.jpeg"
+          width="96%"
+          height="100%"
+        />
+      </view>
+      <view class="content-text" style="overflow:{{textHidden}}; {{hasHeight}}">
+        <text>
+          {{materials.content || strategies.content || activities.content}}
+        </text>
+      </view>
+    </view>
+    <view class="footer">
+      <view class="collapse-button">
+        <van-button color="var(--themeColorBlue)" round plain bind:click="collapse"> 点击查看全部/收起 </van-button>
+      </view>
+    </view>
+
+</page>
+
+</van-skeleton>

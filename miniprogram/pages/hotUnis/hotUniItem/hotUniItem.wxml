@@ -1,0 +1,96 @@
+<page>
+  <view class="header">
+    <view class="block uni_title">
+      <view class="uni_icon">
+        <van-image
+          fit="contain"
+          width="200rpx"
+          height="200rpx"
+          radius="100rpx 100rpx 100rpx 100rpx"
+          src="../../../../images/unis/UoM.png"
+        />
+      </view>
+      
+      <view class="uni_subtitle">
+        <view>阿德莱德大学</view>
+        <view>The University of Adelaide</view>
+        <view>
+          <text>世界排名:100</text>
+          <text>澳洲排名:8</text>
+          <text>录取率:97.8%</text>
+        </view>
+        <view style="width: 80%;">
+          <van-divider
+            customStyle="color: var(--themeColorBlue); border-color: var(--themeColorBlue);"
+          >
+          </van-divider>
+        </view>
+    </view>
+  </view>
+
+    <view class="block uni_detail">
+      <view class="uni_detail_title">
+        <van-icon name="label-o" size="40rpx"/>
+        <text>学校介绍</text>
+      </view>
+
+      <view class="uni_detail_content">
+        <view class="uni_detail_content-image">
+          <van-image
+            widthFix
+            src="../../../../images/testimg.jpeg"
+            width="96%"
+            height="100%"
+          />
+        </view>
+      </view>
+      <view class="content-text" style="overflow:{{textHidden}}; {{hasHeight}}">
+        <text>
+          啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦
+        </text>
+      </view>
+
+      <view class="collapse-button">
+        <van-button color="var(--themeColorBlue)" round plain bind:click="collapse"> 点击查看全部/收起 </van-button>
+      </view>
+
+
+    </view>
+  </view>
+  <view class="block content">
+    <view class="uni_major_title">
+        <van-icon name="label-o" size="40rpx"/>
+        <text>学校专业</text>
+    </view>
+
+    <view class="container">
+    <view class="index_container_content_uni">
+    <!--       wx:for="{{hotMajorsList}}"
+      wx:key="index" -->
+
+      <view class="container_uniIcon">
+        <image src="../../../images/unis/UoM.png" lazy-load="true"></image>
+      </view>
+      <view class="container_uniDetail">
+        <view class="container_uniDetail_title">
+          <text>{{item.major_name}}</text>
+          <view class="container_uniRank">
+            <view class="container_uniRank_content">QS:{{item.uni_rank}}</view>
+          </view>
+        </view>
+        <view class="container_uniDetail_block">
+          <text>{{item.university.uni_name_eng}}</text>
+        </view>
+        <view class="container_uniDetail_block">
+          <text>学费: {{ item.tuition["min"] }}-{{ item.tuition["max"] }} 澳币/年</text>
+          <text>学制: {{ item.schooling_length }}</text>
+        </view>
+      <view class="requirements"> 
+        <text>PTE/雅思: 本科 {{item.eng_requirement.bachelor["pte"]}}/{{item.eng_requirement.bachelor["ielts"]}}, 硕士 {{item.eng_requirement.master["pte"]}}/{{item.eng_requirement.master["ielts"]}}</text>
+      </view>
+    </view>
+</view>
+</view>
+  </view>
+  <view class="footer"></view>
+</page>
