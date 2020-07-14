@@ -115,6 +115,14 @@
 					"id": -1,
 					"name": "留学频道-二级页面",
 					"pathName": "pages/studyingChannel/studyingChannelItem/studyingChannelItem",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 10,
+					"name": "院校大全-二级页面",
+					"pathName": "pages/hotUnis/hotUniItem/hotUniItem",
+					"query": "",
 					"scene": null
 				}
 			]
