@@ -59,7 +59,9 @@ Page({
         console.log(this.data.strategies)
       }
     })
-
+    this.setData({
+      loading: false
+    })
   },
   collapse: function() {
     if(this.data.isCollapse) {
@@ -80,7 +82,7 @@ Page({
    * 小程序页面加载完成后
    */
   onReady() {
-   
+    
   },
 
   /**

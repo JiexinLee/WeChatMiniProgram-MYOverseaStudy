@@ -1,5 +1,6 @@
-<page>
+<van-skeleton title row="5" title-width="70%" loading="{{ loading }}">
 
+<page>
     <view class="header">
       <view class="title">
         <text>{{materials.title || strategies.title || activities.title}}</text>
@@ -32,3 +33,5 @@
     </view>
 
 </page>
+
+</van-skeleton>

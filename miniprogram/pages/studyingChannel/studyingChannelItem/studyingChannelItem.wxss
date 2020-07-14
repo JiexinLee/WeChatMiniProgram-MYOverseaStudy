@@ -1,4 +1,6 @@
-
+page {
+  background-color: white;
+}
 .title text{
   font-size: 38rpx;
 }
