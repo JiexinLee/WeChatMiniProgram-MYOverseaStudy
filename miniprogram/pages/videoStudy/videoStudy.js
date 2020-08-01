@@ -9,7 +9,7 @@ Page({
   data: {
     searchValue: '',
     videos: [],
-    videoIndex: '',
+    videoindex: '',
   },
 
   /**
@@ -25,13 +25,23 @@ Page({
         videoindex: videoindex
       })
       videoCtx.play();
+      console.log('bbbb')
     } else {    // 有其他视频正在播放
+    console.log('aaaaa')
       var videoCtxPrev = wx.createVideoContext('myVideo' + this.data.videoindex); //找到当前正在播放的视频
-      videoCtxPrev.pause();    //暂停
-      this.setData({
-        videoindex: videoindex
-      })
-      videoCtx.play();    //播放点击的视频
+      if(videoCtxPrev == videoCtx) {
+        console.log(11111)
+        videoCtxPrev.play();
+        this.setData({
+          videoindex: ''
+        })
+      } else{
+        videoCtxPrev.pause();    //暂停
+        this.setData({
+          videoindex: videoindex
+        })
+        videoCtx.play();    //播放点击的视频
+      }
     }
   },
   
