@@ -21,8 +21,7 @@
         />
       </view>
       <view class="content-text" style="overflow:{{textHidden}}; {{hasHeight}}">
-        <text>
-          {{materials.content || strategies.content || activities.content}}
+        <text space="emsp">  {{materials.content || strategies.content || activities.content}}
         </text>
       </view>
     </view>

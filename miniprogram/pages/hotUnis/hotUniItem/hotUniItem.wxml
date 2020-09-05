@@ -1,32 +1,46 @@
 <page>
   <view class="header">
-    <view class="block uni_title">
-      <view class="uni_icon">
-        <van-image
-          fit="contain"
-          width="200rpx"
-          height="200rpx"
-          radius="100rpx 100rpx 100rpx 100rpx"
-          src="../../../../images/unis/UoM.png"
-        />
+    <view class="block">
+    <view class="uni_title">
+      <!-- icon -->
+        <view class="uni_icon">
+          <van-image
+            fit="contain"
+            width="200rpx"
+            height="200rpx"
+            radius="100rpx 100rpx 100rpx 100rpx"
+            src="../../../../images/unis/UoM.png"
+          />
+        </view>
+      <!-- icon end -->
+
+        <!-- subtitle-->
+        <view class="uni_subtitle">
+          <view>阿德莱德大学</view>
+          <view>The University of Adelaide</view>
+          <view>
+            <text>世界排名:100</text>
+            <text>澳洲排名:8</text>
+            <text>录取率:97.8%</text>
+          </view>
+          <view style="width: 100%;">
+            <van-divider
+              customStyle="color: var(--themeColorBlue); border-color: var(--themeColorBlue);"
+            >
+            </van-divider>
+          </view>
       </view>
-      
-      <view class="uni_subtitle">
-        <view>阿德莱德大学</view>
-        <view>The University of Adelaide</view>
-        <view>
-          <text>世界排名:100</text>
-          <text>澳洲排名:8</text>
-          <text>录取率:97.8%</text>
-        </view>
-        <view style="width: 80%;">
-          <van-divider
-            customStyle="color: var(--themeColorBlue); border-color: var(--themeColorBlue);"
-          >
-          </van-divider>
-        </view>
+      <!-- subtitle end -->
     </view>
+     <view class="uni_info">
+          <view><text  space="ensp">学校类型: 公立大学            建校时间: 1874年</text></view>
+          <view><text  space="ensp">在校学生: 公立大学            授课语言: 1874年</text></view>
+          <view><text  space="ensp">录取要求: GPA:75分</text></view>
+          <view><text  space="ensp">优势专业: 商科 工程 葡萄酒 医学</text></view>
+          <view><text  space="ensp">学校地址: The University of Adelaide, Adelaide, South Australia 5005</text></view>
+      </view>
   </view>
+
 
     <view class="block uni_detail">
       <view class="uni_detail_title">
@@ -45,8 +59,8 @@
         </view>
       </view>
       <view class="content-text" style="overflow:{{textHidden}}; {{hasHeight}}">
-        <text>
-          啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦
+        <text space="ensp">
+     啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦
         </text>
       </view>
 

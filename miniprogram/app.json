@@ -10,7 +10,8 @@
     "pages/hotUnis/hotUnis",
     "pages/studyingChannel/studyingChannel",
     "pages/studyingChannel/studyingChannelItem/studyingChannelItem",
-    "pages/hotUnis/hotUniItem/hotUniItem"
+    "pages/hotUnis/hotUniItem/hotUniItem",
+    "pages/hotMajors/hotMajorItem/hotMajorItem"
   ],
   "usingComponents": {
     "van-button": "@vant/weapp/button",

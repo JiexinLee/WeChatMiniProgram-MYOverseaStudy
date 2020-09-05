@@ -124,6 +124,13 @@
 					"pathName": "pages/hotUnis/hotUniItem/hotUniItem",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "热门专业-二级页面",
+					"pathName": "pages/hotMajors/hotMajorItem/hotMajorItem",
+					"query": "",
+					"scene": null
 				}
 			]
 		}
