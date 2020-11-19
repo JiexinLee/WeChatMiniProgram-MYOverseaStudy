@@ -17,11 +17,9 @@
 
   <!-- content -->
   <view class="content">
-    <van-collapse value="{{ activeName }}" bind:change="onChange" >
-      <view class="wrapper"
-        wx:for = "{{questions}}"
-        wx:key = 'index'
-      >
+    <van-collapse value="{{ activeName }}" bind:change="onChange" wx:for = "{{questions}}"
+        wx:key = 'index' class="wrapper">
+
         <van-collapse-item title="{{item.title}}" name="{{item._id}}" class="blank" icon="{{item.icon}}">
           <view wx:if="{{item.answer == ''}}">
             亲, 此问题还没有人回答哦..
@@ -30,7 +28,6 @@
             {{item.responser}}: {{item.answer}}
           </view>
         </van-collapse-item>
-      </view>
 
     </van-collapse>
   </view>

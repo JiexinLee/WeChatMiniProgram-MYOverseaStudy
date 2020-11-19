@@ -7,3 +7,15 @@
   position: absolute;
   bottom: 0
 }
+
+/* 将右侧 icon 进行旋转 */
+.routerIcon{
+  transition: all .3s;
+  transform: rotate(180deg) !important;
+}
+
+/* 将右侧 icon 旋转重置 */
+.resetIcon{
+  transform: rotate(0deg);
+  transition: all .3s;
+}

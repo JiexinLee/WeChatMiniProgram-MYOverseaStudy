@@ -1,3 +1,4 @@
-<view class="float_button">
-  <image src="/images/categoryList/version2/zixun.png"></image>
+<view class="float-button" catchtouchmove="buttonMove" catchtouchstart="buttonStart" catchtouchend="buttonEnd" style="top:{{buttonTop}}px;left:{{buttonLeft}}px;">
+ <image src="../../images/floatBtn/images (1).png"/>
+
 </view>

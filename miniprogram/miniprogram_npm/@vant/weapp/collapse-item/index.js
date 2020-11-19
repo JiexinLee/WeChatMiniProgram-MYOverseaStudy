@@ -86,6 +86,7 @@ component_1.VantComponent({
             var index = this.parent.children.indexOf(this);
             var currentName = name == null ? index : name;
             this.parent.switch(currentName, !expanded);
+            console.log("Onclick!")
         },
         onTransitionEnd: function () {
             if (this.data.expanded) {

@@ -1,18 +1,22 @@
 
 .float-button {
-  position: fixed;
-  bottom: 20rpx;
-  right: 10rpx;  
-  display: flex;
-  justify-content: center;
-  border: 0 solid #ffffff;
-  border-radius: 50rpx;
-  box-shadow: 4rpx 1rpx 1rpx #cccccc;
-  background-color: aqua;
+  width:100rpx;
+  height:100rpx;
+  border-radius:50rpx;
+  position:fixed;
+  background:#fff;
+  line-height:50rpx;
+  font-size:25pt;
+  color:#fff;
+  z-index:9999;
+  border: 3rpx solid orange 
 }
 
 .float-button image {
-  height: 50rpx;
-  width: 50rpx;
+  position: relative;
+  left: 18rpx;
+  top: 20rpx;
+  height: 65rpx;
+  width: 65rpx;
 }
 

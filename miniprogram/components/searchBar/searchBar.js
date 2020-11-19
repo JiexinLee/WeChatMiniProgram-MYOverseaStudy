@@ -1,4 +1,5 @@
 // components/searchBar/searchBar.js
+
 Component({
   /**
    * 组件的属性列表
@@ -31,6 +32,7 @@ Component({
     /**
      * 绑定点击事件
      */
+
     chooseFromAlbum() {
       //系统apis， 用户选择图片
       wx.chooseImage({
@@ -38,8 +40,23 @@ Component({
           console.log(res)
         },
       })
-    }
-  },
+    },
+  
 
+    scan: function(){
+    wx.scanCode({ 
+      success (res) {
+        console.log(res)
+      },
+    })
+   },
+
+
+  typingValueChanging: function(e) {
+    this.setData({
+      typingValue: e.detail
+    })
+  },
+  },
   
 })

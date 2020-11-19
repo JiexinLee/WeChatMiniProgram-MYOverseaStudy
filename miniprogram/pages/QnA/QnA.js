@@ -2,14 +2,22 @@ var app = getApp();
 var db = app.globalData.db;
 const qna_list = db.collection("qAndA");
 Page({
+  
   data: {
     activeName: [],
-    questions:[],
+    questions:[{"_id":"05f2c36f5eb93a0a0090f48d715be51e","title":"请问悉尼大学雅思成绩要求多少？","icon":"../../../../images/testimg.jpeg","answer":"大学的雅思要求总分6.5分哦大学的雅思要求总分6.5分哦大学的雅思要求总分6.5分哦大学的雅思要求总分6.5分哦大学的雅思要求总分6.5分哦","responser":"留学科代表"},
+    {"_id":"05f2c36f5eb93a510090fd07171d51df","title":"请问阿德莱德大学雅思成绩要求多少啦啦啦啦啦啦啦啦啦啦？","answer":"大学的雅思要求总分6.5分哦","icon":"../../../../images/testimg.jpeg","responser":"留学科代表"},
+    {"_id":"5e847ab25ebc14a700da157b077ec049","responser":"","answer":"","icon":"https://wx.qlogo.cn/mmopen/vi_32/PiajxSqBRaEKv8phdBk9cpEia8raQ2MBibpFIuCKvfFcbU0ujHzG8SrnY49ciankVp1szOx2PaEAJic4Ql8SicOlkJ6A/132","_openid":"ojT_d4iMS2v88-weqFFlvbQjX8ZQ","title":"读南澳大学需要什么条件吗？"},
+    {"_id":"37e26adb5ec26e9400f5a9103de67245","_openid":"ojT_d4iMS2v88-weqFFlvbQjX8ZQ","title":"请问我还需要问什么问题？","responser":"","answer":"","icon":"https://wx.qlogo.cn/mmopen/vi_32/PiajxSqBRaEKv8phdBk9cpEia8raQ2MBibpFIuCKvfFcbU0ujHzG8SrnY49ciankVp1szOx2PaEAJic4Ql8SicOlkJ6A/132"},
+    {"_id":"1b64dd7b5f67f626002cee1c103923c7","_openid":"ojT_d4id_bp6gCgDUg_7kxJzNTOI","answer":"","icon":"https://thirdwx.qlogo.cn/mmopen/vi_32/Ct8bt215tuqia5bMib0AgeuVYGTQwKGCTt79oLUq2SLgV49fEFGdIKexPqJI5Q2LoLmpH5am0kBqg4fAWMFdgJtA/132","responser":"","title":"测试问题"},
+    {"_id":"d52d5a735fa77b2f0056ea1173a0ba35","title":"这是一个测试问题？","_openid":"ojT_d4iMS2v88-weqFFlvbQjX8ZQ","answer":"","icon":"https://thirdwx.qlogo.cn/mmopen/vi_32/PiajxSqBRaEKv8phdBk9cpEia8raQ2MBibpFIuCKvfFcbU0ujHzG8SrnY49ciankVp1szOx2PaEAJic4Ql8SicOlkJ6A/132","responser":""},
+    {"_id":"38597c165fa8c776008421a655bff946","icon":"https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKic4ttq8hHdgx2IbgCdQDXApa85EHbMvNF9YmHT1aLGIaZ0bUlSkhn3nGylicmy9oEgfLcibUaUibhhw/132","responser":"","title":"测试","_openid":"ojT_d4ksCirdulqDWI9aWe2_9KGc","answer":""}],
     searchValue: '',
     questionsValue: '',
     userAvatar: '',
     typingValue: ''
   },
+  
   onChange(event) {
     this.setData({
       activeName: event.detail

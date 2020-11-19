@@ -2,7 +2,7 @@
 
 .van-collapse-item__title .van-cell__right-icon {
   -webkit-transform: rotate(90deg);
-  transform: rotate(90deg);
+   transform: rotate(90deg); 
   transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
   transition: transform 0.3s, -webkit-transform 0.3s;

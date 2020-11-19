@@ -1,6 +1,6 @@
 <view class="search-input">
 <!-- 左侧： scan按钮 -->
-  <view class="searchBar-scan"> 
+  <view class="searchBar-scan" bindtap="scan"> 
     <navigator class="searchBar-navi">
       <image class="searchBar-icon" style="display: block;" src="/images/searchBar/scan.png"></image>
       <view>
