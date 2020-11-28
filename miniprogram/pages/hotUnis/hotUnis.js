@@ -10,7 +10,16 @@ Page({
     mainActiveIndex: 0,
     activeId: [],
     max: 100,
-    unis: [],
+    unis: [{"_id":"7REK0dekv0maaU8oWVC8tAk0V9gAm8ZTrp6sWpdvGfDunwQ2","uni_name":"阿德莱德大学","uni_name_eng":"The University of Adelaide","tuition":{"min":40000,"max":50000},"eng_requirement":{"bachelor":{"pte":58,"ielts":6.5},"master":{"pte":65,"ielts":7}},"location":"Adelaide","counter":0,"acception":90.2,"tag":["ANU","G8"],"migratable":true,"uni_icon":"../../images/unis/UoM.png","uni_rank":108.0,"agency_icon":"","introduction":{}},
+    {"_id":"uFHcNASWDDCUXjeKWh4OheINxuj3AO55TjlHwc8RlMGBzHrj","uni_name":"墨尔本大学","uni_name_eng":"The University of Melbourne","tuition":{"min":40000,"max":50000},"eng_requirement":{"bachelor":{"pte":58,"ielts":6.5},"master":{"pte":65,"ielts":7}},"location":"Melbourne","counter":0,"acception":90.2,"tag":["ANU","G8"],"migratable":true,"uni_icon":"../../images/unis/UoM.png","uni_rank":38,"agency_icon":"","introduction":{}},
+    {"_id":"s4zfJgoyRhZftgnqON8mLUiFB8KhTSi6asW4V5ZEDSCJZX6C","uni_name":"悉尼大学","uni_name_eng":"The University of Sydney","tuition":{"min":42000,"max":50000},"eng_requirement":{"bachelor":{"pte":58,"ielts":6.5},"master":{"pte":65,"ielts":7}},"location":"Sydney","counter":0,"acception":97.2,"tag":["ANU","G8"],"migratable":true,"uni_icon":"../../images/unis/UoM.png","uni_rank":57,"agency_icon":"","introduction":{}},
+    {"_id":"DnuMLmvSf20UFDzr1CAFDzncIWmePia8bSprdGAzcLRqCrti","uni_name":"澳洲国立大学","uni_name_eng":"Australian National University","tuition":{"min":37000,"max":40000},"eng_requirement":{"bachelor":{"pte":58,"ielts":6.5},"master":{"pte":65,"ielts":7}},"location":"Melbourne","counter":10,"acception":90.2,"tag":["ANU","G8"],"migratable":true,"uni_icon":"../../images/unis/UoM.png","uni_rank":18,"agency_icon":"","introduction":{}}
+    ],
+    originalUnis: [{"_id":"7REK0dekv0maaU8oWVC8tAk0V9gAm8ZTrp6sWpdvGfDunwQ2","uni_name":"阿德莱德大学","uni_name_eng":"The University of Adelaide","tuition":{"min":40000,"max":50000},"eng_requirement":{"bachelor":{"pte":58,"ielts":6.5},"master":{"pte":65,"ielts":7}},"location":"Adelaide","counter":0,"acception":90.2,"tag":["ANU","G8"],"migratable":true,"uni_icon":"../../images/unis/UoM.png","uni_rank":108.0,"agency_icon":"","introduction":{}},
+    {"_id":"uFHcNASWDDCUXjeKWh4OheINxuj3AO55TjlHwc8RlMGBzHrj","uni_name":"墨尔本大学","uni_name_eng":"The University of Melbourne","tuition":{"min":40000,"max":50000},"eng_requirement":{"bachelor":{"pte":58,"ielts":6.5},"master":{"pte":65,"ielts":7}},"location":"Melbourne","counter":0,"acception":90.2,"tag":["ANU","G8"],"migratable":true,"uni_icon":"../../images/unis/UoM.png","uni_rank":38,"agency_icon":"","introduction":{}},
+    {"_id":"s4zfJgoyRhZftgnqON8mLUiFB8KhTSi6asW4V5ZEDSCJZX6C","uni_name":"悉尼大学","uni_name_eng":"The University of Sydney","tuition":{"min":42000,"max":50000},"eng_requirement":{"bachelor":{"pte":58,"ielts":6.5},"master":{"pte":65,"ielts":7}},"location":"Sydney","counter":0,"acception":97.2,"tag":["ANU","G8"],"migratable":true,"uni_icon":"../../images/unis/UoM.png","uni_rank":57,"agency_icon":"","introduction":{}},
+    {"_id":"DnuMLmvSf20UFDzr1CAFDzncIWmePia8bSprdGAzcLRqCrti","uni_name":"澳洲国立大学","uni_name_eng":"Australian National University","tuition":{"min":37000,"max":40000},"eng_requirement":{"bachelor":{"pte":58,"ielts":6.5},"master":{"pte":65,"ielts":7}},"location":"Melbourne","counter":10,"acception":90.2,"tag":["ANU","G8"],"migratable":true,"uni_icon":"../../images/unis/UoM.png","uni_rank":18,"agency_icon":"","introduction":{}}
+    ],
     items: [
       {
         // 导航名称
@@ -120,7 +129,7 @@ Page({
           },
           {
             id: 20,
-            text: '60-100'
+            text: '61-100'
           },
           {
             id: 21,
@@ -128,7 +137,7 @@ Page({
           },
           {
             id: 22,
-            text: '150-200'
+            text: '151-200'
           },
           {
             id: 23,
@@ -148,7 +157,8 @@ Page({
         var datas = res.data;
         
         this.setData({
-          unis: datas
+          unis: datas,
+          originalUnis: datas
         });
         console.log(this.data.unis)
       }
@@ -191,7 +201,19 @@ Page({
       show: false
     })
   },
-
+  //点击 重置
+  resetAll: function () {
+    wx.showToast({
+      title: '资料在路上..',
+      icon: 'loading',
+      duration: 1200
+    })
+    console.log(this.data.originalUnis)
+    this.setData({
+      unis: this.data.originalUnis,
+      activeId: []
+    })
+  },
   // 点击 筛选
   filterData: function () {
     wx.showToast({
@@ -199,6 +221,146 @@ Page({
       icon: 'loading',
       duration: 1200
     })
+    console.log(this.data.activeId)
+    if (this.data.activeId.length == 0) {
+      this.setData({
+        unis: originalUnis
+      })
+    } else {
+      this.setData({
+        unis: []
+      })
+      let tempList = this.data.activeId
+      let backup = this.data.originalUnis
+      for (let val in this.data.activeId) {
+        if (tempList[val] >= 1 && tempList[val] <= 7) {
+          // gao bu liao
+        } 
+        else if (tempList[val] >= 8 && tempList[val] <= 17) {
+          switch (tempList[val]) {
+            case 8:
+              for (let item in backup) {
+                if (backup[item].location == "Sydney") {
+                  this.data.unis.push(backup[item])
+                }
+              }
+              break
+            case 9:
+              for (let item in backup) {
+                if (backup[item].location == "Melbourne") {
+                  this.data.unis.push(backup[item])
+                }
+              }
+              break
+            case 10:
+              for (let item in backup) {
+                if (backup[item].location == "Brisbane") {
+                  this.data.unis.push(backup[item])
+                }
+              }
+              break
+            case 11:
+              for (let item in backup) {
+                if (backup[item].location == "Adelaide") {
+                  this.data.unis.push(backup[item])
+                }
+              }
+              break
+            case 12:
+              for (let item in backup) {
+                if (backup[item].location == "Darwin") {
+                  this.data.unis.push(backup[item])
+                }
+              }
+              break
+            case 13:
+              for (let item in backup) {
+                if (backup[item].location == "Perth") {
+                  this.data.unis.push(backup[item])
+                }
+              }
+              break
+            case 14:
+              for (let item in backup) {
+                if (backup[item].location == "Tasmania") {
+                  this.data.unis.push(backup[item])
+                }
+              }
+              break
+            case 15:
+              for (let item in backup) {
+                if (backup[item].location == "Canberra") {
+                  this.data.unis.push(backup[item])
+                }
+              }
+              break
+            case 16:
+              for (let item in backup) {
+                if (backup[item].location == "New Zealand") {
+                  this.data.unis.push(backup[item])
+                }
+              }
+              break
+            case 17:
+              for (let item in backup) {
+                if (backup[item].location == "America") {
+                  this.data.unis.push(backup[item])
+                }
+              }
+              break
+          }
+        } 
+        else { 
+          switch (tempList[val]) {
+            case 18:
+              for (let item in backup) {
+                if (backup[item].uni_rank >= 1 && backup[item].uni_rank <= 30) {
+                  this.data.unis.push(backup[item])
+                }
+              }
+              break
+            case 19:
+              for (let item in this.data.originalUnis) {
+                if (backup[item].uni_rank >= 31 && backup[item].uni_rank <= 60) {
+                  this.data.unis.push(backup[item])
+                }
+              }
+              break
+            case 20:
+              for (let item in this.data.originalUnis) {
+                if (backup[item].uni_rank >= 61 && backup[item].uni_rank <= 100) {
+                  this.data.unis.push(backup[item])
+                }
+              }
+              break
+            case 21:
+              for (let item in this.data.originalUnis) {
+                if (backup[item].uni_rank >= 101 && backup[item].uni_rank <= 150) {
+                  this.data.unis.push(backup[item])
+                }
+              }
+              break
+            case 22:
+              for (let item in this.data.originalUnis) {
+                if (backup[item].uni_rank >= 151 && backup[item].uni_rank <= 200) {
+                  this.data.unis.push(backup[item])
+                }
+              }
+              break
+            case 23:
+              for (let item in this.data.originalUnis) {
+                if (backup[item].uni_rank > 200) {
+                  this.data.unis.push(backup[item])
+                }
+              }
+              break
+          }
+        }
+        this.setData({
+          unis: this.data.unis
+        })
+      }
+    }
   },
   /**
    * 转到细节

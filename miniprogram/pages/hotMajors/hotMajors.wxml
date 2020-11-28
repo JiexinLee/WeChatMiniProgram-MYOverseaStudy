@@ -30,6 +30,7 @@
     <view class="index_container_content_uni" 
       wx:for="{{hotMajorsList}}"
       wx:key="index"
+      id="{{item._id}}"
     >
       <view class="container_uniIcon">
         <image src="{{item.university.uni_icon}}" lazy-load="true"></image>

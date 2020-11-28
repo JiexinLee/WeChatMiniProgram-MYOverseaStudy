@@ -28,6 +28,32 @@
     </view>
   </view>
 
+
+<!-- 
+  <view class="uni_moreinfo">
+    <view>
+      <text>学校类型： 公立 大学</text>
+      <text>建校时间： 1874年</text>
+    </view>
+    <view>
+      <text>在校学生： 21015人</text>
+      <text>授课语言： 英文</text>
+    </view>
+    <view>
+      <text>录取要求： 托福0分 SAT 0~0 需要SATII GPA 75分</text>
+    </view>
+    <view>
+      <text>优势专业： 商科 工程 葡萄酒 医学</text>
+    </view>
+    <view>
+      <text>学校地址：The University of Adelaide, Adelaide, South Australia 5005</text>
+    </view>
+    <van-divider
+            customStyle="color: var(--themeColorBlue); border-color: var(--themeColorBlue);"
+          >
+          </van-divider>
+  </view> -->
+
     <view class="block uni_detail">
       <view class="uni_detail_title">
         <van-icon name="label-o" size="40rpx"/>

@@ -26,6 +26,7 @@
   margin-right: 10rpx;
 }
 
+
 .uni_detail_title, .uni_major_title {
   height: 80rpx;
   margin-bottom: 5rpx;

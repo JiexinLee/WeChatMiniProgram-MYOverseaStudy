@@ -81,7 +81,7 @@
   />
   <view class="filter-buttons">
     <van-button round type="default" bind:click="resetAll" style="margin-right: 20rpx;">重置</van-button>
-    <van-button round type="myFilter" bind:click="filterData" >筛选</van-button>
+    <van-button round type="myFilter" bind:click="filterData">筛选</van-button>
   </view>
   <van-toast id="custom-selector" />
   </van-popup>

@@ -1,6 +1,7 @@
 var sortRule = false;
 const db = wx.cloud.database(); //连接数据库
 const major_list = db.collection("hotMajors");
+
 Page({
   /**
    * 页面的初始数据
@@ -10,6 +11,10 @@ Page({
     showMore: false, // 第二层弹出
     mainActiveIndex: 0,
     activeId: [],
+    hotMajorsList:[
+      {"_id":"XpQzRV05pM1vmz4R9a7YIEbbtLgCpHpVIHWiBLFXUd6bTGpE","major_name":"软件工程硕士","tuition":{"min":40000,"max":50000},"isImmigrantMajor":true,"schooling_length":2,"eng_requirement":{"bachelor":{"pte":65,"ielts":7},"master":{"pte":65,"ielts":7}},"university":{"uni_name_eng":"The University of Adelaide","isBig8":true,"uni_icon":"../../images/unis/UoM.png","location":"Adelaide"},"education_level":"硕士课程","field_of_discipline":"计算机","professional_emphasis":"软件工程/软件开发","uni_rank":125.0}, 
+      {"_id":"I8SE2Jti8LfPf2SJlJwln8NFIBGKfBDGTN8d1A9iq5VUqABD","major_name":"计算机科学硕士","tuition":{"min":41000,"max":51000},"isImmigrantMajor":true,"eng_requirement":{"bachelor":{"pte":58,"ielts":6.5},"master":{"pte":65,"ielts":7}},"university":{"uni_name_eng":"The University of Western Australia","isBig8":true,"uni_icon":"../../images/unis/UoM.png","location":"Perth"},"schooling_length":2,"education_level":"硕士课程","field_of_discipline":"计算机","professional_emphasis":"计算机科学","uni_rank":108.0}
+    ],
     searchValue: "",
     max: 100,
     items: [
@@ -118,8 +123,7 @@ Page({
 
         ]
       }
-    ],
-    hotMajorsList:[],
+    ]
   },
 
   /**
@@ -197,7 +201,6 @@ Page({
         })
       }
     })
-    
   },
 
   onClickNav({ detail = {} }) {
